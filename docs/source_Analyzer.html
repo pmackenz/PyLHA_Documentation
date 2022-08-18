@@ -1,0 +1,1156 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Analysis module &mdash; PyLHA v0.99 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="author" title="About these documents" href="about.html" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Triggering Module" href="source_triggers.html" />
+    <link rel="prev" title="Main application" href="source_main_app.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="index.html" class="icon icon-home"> PyLHA
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">User Manual</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="about.html">About PyLHA</a></li>
+<li class="toctree-l1"><a class="reference internal" href="user_manual.html">Application Manual</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Technical Manual</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="technical_manual.html">Theory</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Source Docs</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="source_main_app.html">Main application</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Analysis module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#helper-classes">Helper classes</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="source_triggers.html">Triggering Module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="source_UI.html">UI Module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="source_Graphics.html">Graphics Module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="source_LHA_driver.html">LHA_Driver Module</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">PyLHA</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>Analysis module</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/source_Analyzer.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="analysis-module">
+<h1>Analysis module<a class="headerlink" href="#analysis-module" title="Permalink to this heading"></a></h1>
+<dl class="py class">
+<dt class="sig sig-object py">
+<span class="target" id="class_analyzer_1_1_deaggregation_master_1_1_deaggregation"></span><span class="sig-name descname"><span class="pre">Analyzer.DeaggregationMaster.Deaggregation</span> <span class="pre">:</span> <span class="pre">public</span> <span class="pre">object</span></span></dt>
+<dd><p>Class for parsing raw deaggregation output files for a given return period needs to be called while in the directory where summary.txt and data.csv files reside. </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="init__">
+<span class="target" id="class_analyzer_1_1_deaggregation_master_1_1_deaggregation_1a2e3836efab515469bfab0fb77d8185b9"></span><span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">siteName</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">siteID</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">coord</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[0,</span> <span class="pre">0]</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Vs30</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#init__" title="Permalink to this definition"></a></dt>
+<dd><p>:param siteName: :param siteID: :param coord: :param Vs30: </p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="getMetaData">
+<span class="target" id="class_analyzer_1_1_deaggregation_master_1_1_deaggregation_1abd970cc9a02053e53bb458546661164a"></span><span class="sig-name descname"><span class="pre">getMetaData</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#getMetaData" title="Permalink to this definition"></a></dt>
+<dd><p>Obtaining recovered Ground motion amplitudes and return periods from deaggregation <code class="docutils literal notranslate"><span class="pre">summary.txt</span></code> file. </p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="generateBins">
+<span class="target" id="class_analyzer_1_1_deaggregation_master_1_1_deaggregation_1a61ca6bfb6b5f39cb3de73b681bfe46ba"></span><span class="sig-name descname"><span class="pre">generateBins</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#generateBins" title="Permalink to this definition"></a></dt>
+<dd><p>Generate bin data and bin center arrays. </p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="readSummary">
+<span class="target" id="class_analyzer_1_1_deaggregation_master_1_1_deaggregation_1a1edcd60428f9a4ba2cb179e5fe904968"></span><span class="sig-name descname"><span class="pre">readSummary</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'summary.txt'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#readSummary" title="Permalink to this definition"></a></dt>
+<dd><p>:param filename: defaults to <code class="docutils literal notranslate"><span class="pre">summary.txt</span></code> :return: summary string </p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="truncateDataset">
+<span class="target" id="class_analyzer_1_1_deaggregation_master_1_1_deaggregation_1a0db4a88268c966bc4f9b349ddc44c603"></span><span class="sig-name descname"><span class="pre">truncateDataset</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#truncateDataset" title="Permalink to this definition"></a></dt>
+<dd><p>Performs initial truncation and sets regularly-spaced distance and magnitude coordinates. </p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="generateMwDist">
+<span class="target" id="class_analyzer_1_1_deaggregation_master_1_1_deaggregation_1a43f46a388736df40f4154e00d5debe56"></span><span class="sig-name descname"><span class="pre">generateMwDist</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#generateMwDist" title="Permalink to this definition"></a></dt>
+<dd><p>Reads through raw Pct Data and populates regularly-spaced array values. </p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="refinePctData">
+<span class="target" id="class_analyzer_1_1_deaggregation_master_1_1_deaggregation_1a9196904ec5d501f90b5f9cd1cc5e1de7"></span><span class="sig-name descname"><span class="pre">refinePctData</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#refinePctData" title="Permalink to this definition"></a></dt>
+<dd><p>Reads through raw Pct contribution Data (which is not regularly-spaced) and populates regularly-spaced array values. </p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="CDFhelper">
+<span class="target" id="class_analyzer_1_1_deaggregation_master_1_1_deaggregation_1ac24ea03cb36eae3a80f92fbe2de5229f"></span><span class="sig-name descname"><span class="pre">CDFhelper</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">PDF</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#CDFhelper" title="Permalink to this definition"></a></dt>
+<dd><p>Helper function for numerically converting the pct contribution bin data to percent exceedance data. </p>
+<p>:param PDF: :param x: :return: Bins, CDF </p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="calcDistributions">
+<span class="target" id="class_analyzer_1_1_deaggregation_master_1_1_deaggregation_1a04549b37c07477ea90b67c7ee5f81578"></span><span class="sig-name descname"><span class="pre">calcDistributions</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#calcDistributions" title="Permalink to this definition"></a></dt>
+<dd><p>Calculate PDFs and CDFs. </p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="readDeagg">
+<span class="target" id="class_analyzer_1_1_deaggregation_master_1_1_deaggregation_1ad593fff454af635ef2562f1ee62fde24"></span><span class="sig-name descname"><span class="pre">readDeagg</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'data.csv'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#readDeagg" title="Permalink to this definition"></a></dt>
+<dd><p>HELPER - Reads the .csv function into a list. </p>
+<p>NOTE: raw Mag-Dist data from .csv represent CENTER OF BINS, NOT EDGES</p>
+<p>:param filename: defaults to <code class="docutils literal notranslate"><span class="pre">data.csv</span></code> :return: </p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="plotHistogram">
+<span class="target" id="class_analyzer_1_1_deaggregation_master_1_1_deaggregation_1a21e07f23a59cae4a7b5e33ac479ce862"></span><span class="sig-name descname"><span class="pre">plotHistogram</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scaleR</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scaleM</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#plotHistogram" title="Permalink to this definition"></a></dt>
+<dd><p>Function for plotting pct contribution hist from raw data. </p>
+<p>:param scaleR: :param scaleM: :return: fig, ax </p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py">
+<span class="target" id="class_analyzer_1_1_liq_susceptiblity_1_1suscept_c_p_t"></span><span class="sig-name descname"><span class="pre">Analyzer.LiqSusceptiblity.susceptCPT</span> <span class="pre">:</span> <span class="pre">public</span> <span class="pre">object</span></span></dt>
+<dd><p>Class that calculates the liquefaction susceptibility index for CPT data, based on $I_c$, and returns a separete xArray dataset of susceptibile-only CPT data (<code class="docutils literal notranslate"><span class="pre">self.soil</span></code>) for more efficient PLHA computation. </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="id0">
+<span class="target" id="class_analyzer_1_1_liq_susceptiblity_1_1suscept_c_p_t_1a32a2c26f6cfce9b2398f341a1bcdb9e2"></span><span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">soilDS</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">qMax</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">200</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">IcMax</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2.6</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">limitSI</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.5</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#id0" title="Permalink to this definition"></a></dt>
+<dd><p>Constructor. </p>
+<p><div class="highlight-default notranslate"><div class="highlight"><pre><span></span>   @param soilDS: xArray dataset of CPT data
+   @param qMax: The maximum $q_{c1Ncs}$ value considered to be susceptible, default is 200
+   @param IcMax: The minimum $I_c$ value considered to be susceptible, default is 2.5
+   @param limitSI: The threshold susceptibility index value to be considered susceptible, default is 0.5.
+</pre></div>
+</div>
+ </p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="calcSIcpt">
+<span class="target" id="class_analyzer_1_1_liq_susceptiblity_1_1suscept_c_p_t_1ae24c0d994c9bb60f8724b645ea48474c"></span><span class="sig-name descname"><span class="pre">calcSIcpt</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">999</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sigma</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.001</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#calcSIcpt" title="Permalink to this definition"></a></dt>
+<dd><p>Method that computes susceptibility index. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>b</strong> – Controls smoothness of transition zone from susceptible to non-susceptible. Default is 999 to approximate a step function. Subject to modification with future NGL efforts. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="screenCPT">
+<span class="target" id="class_analyzer_1_1_liq_susceptiblity_1_1suscept_c_p_t_1a3e08858adddbcfa212aabcad167e6c24"></span><span class="sig-name descname"><span class="pre">screenCPT</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#screenCPT" title="Permalink to this definition"></a></dt>
+<dd><p>Method that generates a smaller xArray dataset of susceptible CPT data, based on specified SI, qMax, and groundwater. </p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py">
+<span class="target" id="class_analyzer_1_1_liq_susceptiblity_1_1suscept_s_p_t"></span><span class="sig-name descname"><span class="pre">Analyzer.LiqSusceptiblity.susceptSPT</span> <span class="pre">:</span> <span class="pre">public</span> <span class="pre">object</span></span></dt>
+<dd><p>Class that calculates the liquefaction susceptibility index for SP data, based on $PI$ (Boulanger and Idriss) and :math:<code class="docutils literal notranslate"><span class="pre">w_c/LL</span></code> (Bray and Sancio), and returns a separete xArray dataset of susceptibile-only SPT data (<code class="docutils literal notranslate"><span class="pre">self.soil</span></code>) for more efficient PLHA computation. </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="id1">
+<span class="target" id="class_analyzer_1_1_liq_susceptiblity_1_1suscept_s_p_t_1a42383841c159008b83f299466d2fb914"></span><span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">soilDS</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">wtBI</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">wtBS</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">limitSI</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.5</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#id1" title="Permalink to this definition"></a></dt>
+<dd><p>Constructor. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>soilDS</strong> – xArray dataset of SPT data </p></li>
+<li><p><strong>wtBI</strong> – Relative weight to Boulanger &amp; Idriss susceptibility criteria, default is 0.5 </p></li>
+<li><p><strong>wtBI</strong> – Relative weight to Bray &amp; Sancio susceptibility criteria, default is 0.5 </p></li>
+<li><p><strong>limitSI</strong> – The threshold susceptibility index value to be considered susceptible, default is 0.5. </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="calcSIspt">
+<span class="target" id="class_analyzer_1_1_liq_susceptiblity_1_1suscept_s_p_t_1a280af11beb1895784e720f0fd42ff421"></span><span class="sig-name descname"><span class="pre">calcSIspt</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#calcSIspt" title="Permalink to this definition"></a></dt>
+<dd><p>Method that computes total weighted susceptibility index. </p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="calcSI_BoulIdriss">
+<span class="target" id="class_analyzer_1_1_liq_susceptiblity_1_1suscept_s_p_t_1a7d974d51af1356c8c991ce759503d872"></span><span class="sig-name descname"><span class="pre">calcSI_BoulIdriss</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">piUncertainty</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#calcSI_BoulIdriss" title="Permalink to this definition"></a></dt>
+<dd><p>Method that computes susceptibility index using Boulanger &amp; Idriss criteria. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>piUncertainty</strong> – True or False flag, indicates whether uncertainty in PI is considered. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="calcSI_BraySancio">
+<span class="target" id="class_analyzer_1_1_liq_susceptiblity_1_1suscept_s_p_t_1abfd2bd18d8b4e3020917049db3d784f4"></span><span class="sig-name descname"><span class="pre">calcSI_BraySancio</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#calcSI_BraySancio" title="Permalink to this definition"></a></dt>
+<dd><p>Method that computes susceptibility index using Bray &amp; Sancio criteria. </p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Coefficients for this Equation need to be fixed/verified. </p>
+</div>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py">
+<span class="target" id="class_analyzer_1_1_p_l_h_a__integration_1_1integration_p_l_h_a"></span><span class="sig-name descname"><span class="pre">Analyzer.PLHA_integration.integrationPLHA</span> <span class="pre">:</span> <span class="pre">public</span> <span class="pre">object</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py">
+<span class="target" id="class_analyzer_1_1_p_l_h_a__single_site_1_1_p_l_h_a__single"></span><span class="sig-name descname"><span class="pre">Analyzer.PLHA_singleSite.PLHA_single</span> <span class="pre">:</span> <span class="pre">public</span> <span class="pre">PLHA_trig</span></span></dt>
+<dd><div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="id2">
+<span class="target" id="class_analyzer_1_1_p_l_h_a__single_site_1_1_p_l_h_a__single_1ae64f0875afe3067b97ba370b354b9213"></span><span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#id2" title="Permalink to this definition"></a></dt>
+<dd><p>Constructor. </p>
+<p><div class="highlight-default notranslate"><div class="highlight"><pre><span></span>   @warning This form of the constructor is **DEPRECATED** and will eventually
+       be replaced by ``def __init__(self)``
+
+   Use
+
+       model = PLHA_trig()
+       model.updateProfileType(profileType)
+       model.updateModelType(trigmodel, configID=&#39;config_A&#39;, sigma=&#39;TOTAL&#39;)
+       model.loadSoilProfileFromFile(inputFile, numDeagTRs=8)
+
+   instead.
+
+
+   @param inputFile:
+   @param trigModel:
+   @param numDeagTRs:
+   @param configID:
+   @param sigma:
+</pre></div>
+</div>
+ </p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="updateProfileType">
+<span class="target" id="class_analyzer_1_1_p_l_h_a__single_site_1_1_p_l_h_a__single_1a2ff0cd9131bede073f953c46a61ee658"></span><span class="sig-name descname"><span class="pre">updateProfileType</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">profileType</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#updateProfileType" title="Permalink to this definition"></a></dt>
+<dd><p>initialize/set profile type parameters </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>profileType</strong> – one of [‘SPT’,’CPT’] </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="checkGeneralData">
+<span class="target" id="class_analyzer_1_1_p_l_h_a__single_site_1_1_p_l_h_a__single_1a34939a466e26f5eafc77de94b9bb6f51"></span><span class="sig-name descname"><span class="pre">checkGeneralData</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">usgsFile</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#checkGeneralData" title="Permalink to this definition"></a></dt>
+<dd><p><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">THIS</span> <span class="n">METHOD</span> <span class="n">IS</span> <span class="n">DEPRECATED</span>
+
+<span class="n">Load</span> <span class="n">the</span> <span class="n">selected</span> <span class="n">seismic</span> <span class="n">hazard</span> <span class="n">file</span>
+
+<span class="p">:</span><span class="n">param</span> <span class="n">usgsFile</span><span class="p">:</span>
+<span class="p">:</span><span class="k">return</span><span class="p">:</span>
+</pre></div>
+</div>
+</p>
+<p><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">from</span><span class="p">:</span> <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">xarray</span><span class="o">.</span><span class="n">pydata</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="n">en</span><span class="o">/</span><span class="n">stable</span><span class="o">/</span><span class="n">generated</span><span class="o">/</span><span class="n">xarray</span><span class="o">.</span><span class="n">open_dataset</span><span class="o">.</span><span class="n">html</span>
+
+<span class="n">open_dataset</span> <span class="n">opens</span> <span class="n">the</span> <span class="n">file</span> <span class="k">with</span> <span class="n">read</span><span class="o">-</span><span class="n">only</span> <span class="n">access</span><span class="o">.</span> 
+<span class="n">When</span> <span class="n">you</span> <span class="n">modify</span> <span class="n">values</span> <span class="n">of</span> <span class="n">a</span> <span class="n">Dataset</span><span class="p">,</span> <span class="n">even</span> <span class="n">one</span> <span class="n">linked</span> <span class="n">to</span> <span class="n">files</span> <span class="n">on</span> <span class="n">disk</span><span class="p">,</span> 
+<span class="n">only</span> <span class="n">the</span> <span class="ow">in</span><span class="o">-</span><span class="n">memory</span> <span class="n">copy</span> <span class="n">you</span> <span class="n">are</span> <span class="n">manipulating</span> <span class="ow">in</span> <span class="n">xarray</span> <span class="ow">is</span> <span class="n">modified</span><span class="p">:</span> 
+<span class="n">the</span> <span class="n">original</span> <span class="n">file</span> <span class="n">on</span> <span class="n">disk</span> <span class="ow">is</span> <span class="n">never</span> <span class="n">touched</span><span class="o">.</span>
+</pre></div>
+</div>
+ </p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="update_trFSL_profiles">
+<span class="target" id="class_analyzer_1_1_p_l_h_a__single_site_1_1_p_l_h_a__single_1ae3d3fdf0904ef3cce80f197c021579a8"></span><span class="sig-name descname"><span class="pre">update_trFSL_profiles</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">TRs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#update_trFSL_profiles" title="Permalink to this definition"></a></dt>
+<dd><p>Calculates factor of safety profiles corresponding to a user-defined return period and updates self.fslDS. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>TRs</strong> – A list of return periods for liquefaction factor of safety </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="sendHazardData">
+<span class="target" id="class_analyzer_1_1_p_l_h_a__single_site_1_1_p_l_h_a__single_1addc45bec453f3c75ce9068b8f93ae532"></span><span class="sig-name descname"><span class="pre">sendHazardData</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sendHazardData" title="Permalink to this definition"></a></dt>
+<dd><p>This function is called by the <code class="docutils literal notranslate"><span class="pre">LHA_Driver</span></code> to retreive ground motion hazard data. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>: emit hazardData_updated(<code class="docutils literal notranslate"><span class="pre">xarray.Dataset</span></code>) containing all data relevant for representing the ground motion hazard </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="sendFSLdata">
+<span class="target" id="class_analyzer_1_1_p_l_h_a__single_site_1_1_p_l_h_a__single_1afd59b64a2718779bab1e2967aa6f8bbf"></span><span class="sig-name descname"><span class="pre">sendFSLdata</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sendFSLdata" title="Permalink to this definition"></a></dt>
+<dd><p>This function is called by the <code class="docutils literal notranslate"><span class="pre">LHA_Driver</span></code> to retreive FSL results dataset. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>: emit fslData_updated(<code class="docutils literal notranslate"><span class="pre">xarray.Dataset</span></code>) containing all data relevant to the results </p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py">
+<span class="target" id="class_analyzer_1_1_p_l_h_a__triggering_calc_1_1_p_l_h_a__trig"></span><span class="sig-name descname"><span class="pre">Analyzer.PLHA_triggeringCalc.PLHA_trig</span> <span class="pre">:</span> <span class="pre">public</span> <span class="pre">QObject</span></span></dt>
+<dd><p>Master script that runs the entire PLHA calculation. </p>
+<p><strong>Signals</strong></p>
+<p><table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Signal   </p></th>
+<th class="head"><p>argument(s)   </p></th>
+<th class="head"><p></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>soilData_updated   </p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">xarray.Dataset</span></code></p></td>
+<td><p><p>emitted if new data file has been successfully</p>
+<p>loaded and processed.</p>
+
+ Sends the new soil profile data.    </p></td>
+</tr>
+<tr class="row-odd"><td><p>hazardData_updated   </p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">xarray.Dataset</span></code></p></td>
+<td><p><p>emitted if new hazard data has been successfully</p>
+<p>loaded and processed.</p>
+
+ Sends the new hazard data.   </p></td>
+</tr>
+</tbody>
+</table>
+</p>
+<p>Subclassed by <a class="reference internal" href="#class_analyzer_1_1_p_l_h_a__single_site_1_1_p_l_h_a__single"><span class="std std-ref">PLHA_single</span></a></p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="id3">
+<span class="target" id="class_analyzer_1_1_p_l_h_a__triggering_calc_1_1_p_l_h_a__trig_1a3a77ca74405d13406b427d9f351f4011"></span><span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">inputFile</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">trigModel</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">['CPT',</span> <span class="pre">'BI15']</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">numDeagTRs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">8</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">configID</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'config_A'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sigma</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'TOTAL'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#id3" title="Permalink to this definition"></a></dt>
+<dd><p>Constructor. </p>
+<p><div class="highlight-default notranslate"><div class="highlight"><pre><span></span>   @warning This form of the constructor is **DEPRECATED** and will eventually
+       be replaced by ``def __init__(self)``
+
+   Use
+
+       model = PLHA_trig()
+       model.updateProfileType(profileType)
+       model.updateModelType(trigmodel, configID=&#39;config_A&#39;, sigma=&#39;TOTAL&#39;)
+       model.loadSoilProfileFromFile(inputFile, numDeagTRs=8)
+
+   instead.
+
+
+   @param inputFile:
+   @param trigModel:
+   @param numDeagTRs:
+   @param configID:
+   @param sigma:
+</pre></div>
+</div>
+ </p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="id4">
+<span class="target" id="class_analyzer_1_1_p_l_h_a__triggering_calc_1_1_p_l_h_a__trig_1a2ff0cd9131bede073f953c46a61ee658"></span><span class="sig-name descname"><span class="pre">updateProfileType</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">profileType</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#id4" title="Permalink to this definition"></a></dt>
+<dd><p>initialize/set profile type parameters </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>profileType</strong> – one of [‘SPT’,’CPT’] </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="updateModelType">
+<span class="target" id="class_analyzer_1_1_p_l_h_a__triggering_calc_1_1_p_l_h_a__trig_1a8ebcaa71a675165eb5b4c9bec88daed7"></span><span class="sig-name descname"><span class="pre">updateModelType</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">trigmodel</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">configID</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'config_A'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sigma</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'TOTAL'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#updateModelType" title="Permalink to this definition"></a></dt>
+<dd><p>initialize/set model type parameters </p>
+<p>Supported combinations: [‘BI12_SPT’,’BI15_CPT’,’CEA04_SPT’]</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>trigmodel</strong> – one of [‘BI12’,’BI15’,’CEA04’] </p></li>
+<li><p><strong>profileType</strong> – one of [‘SPT’,’CPT’] </p></li>
+<li><p><strong>configID</strong> – defaults to ‘config_A’ </p></li>
+<li><p><strong>sigma</strong> – defaults to ‘TOTAL’ </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="updateProfileTypeFromFile">
+<span class="target" id="class_analyzer_1_1_p_l_h_a__triggering_calc_1_1_p_l_h_a__trig_1af1faec5b2576c0d31e2a90624c0ece2e"></span><span class="sig-name descname"><span class="pre">updateProfileTypeFromFile</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filename</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#updateProfileTypeFromFile" title="Permalink to this definition"></a></dt>
+<dd><p>Parse the provided file for the soil profile type (SPT|CPT) </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>filename</strong> – full path to Excel file containing the soil profile data. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="loadSoilProfileFromFile">
+<span class="target" id="class_analyzer_1_1_p_l_h_a__triggering_calc_1_1_p_l_h_a__trig_1a1feee16083fb8d918d8e8946f124d45a"></span><span class="sig-name descname"><span class="pre">loadSoilProfileFromFile</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">inputFile</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">numDeagTRs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">8</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#loadSoilProfileFromFile" title="Permalink to this definition"></a></dt>
+<dd><p>Load profile information from a user-provided Excel template. </p>
+<p>Read soil profile from an Excel sheet. The file must strictly follow the provided template format.</p>
+<p>As a result of this run, you will find an xarray named <code class="docutils literal notranslate"><span class="pre">self.WHICH_ONE</span></code> containing all the required information</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>inputFile</strong> – input file name </p></li>
+<li><p><strong>numDeagTRs</strong> – defaults to 8 </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="processInput">
+<span class="target" id="class_analyzer_1_1_p_l_h_a__triggering_calc_1_1_p_l_h_a__trig_1a579053b9ec9f2b71f20ff90a8ed586ab"></span><span class="sig-name descname"><span class="pre">processInput</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#processInput" title="Permalink to this definition"></a></dt>
+<dd><p>Process input file to produce soil, and source-site datasets. </p>
+<p><div class="highlight-default notranslate"><div class="highlight"><pre><span></span>   <span class="n">Call</span> <span class="n">the</span> <span class="s2">&quot;inputData&quot;</span> <span class="k">class</span> <span class="nc">from</span> <span class="n">processInputFile</span><span class="o">.</span><span class="n">py</span>
+</pre></div>
+</div>
+ </p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="sendSoilProfileData">
+<span class="target" id="class_analyzer_1_1_p_l_h_a__triggering_calc_1_1_p_l_h_a__trig_1a7deccb825cc7d185f29e2374a4410062"></span><span class="sig-name descname"><span class="pre">sendSoilProfileData</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sendSoilProfileData" title="Permalink to this definition"></a></dt>
+<dd><p>This function is called by the <code class="docutils literal notranslate"><span class="pre">LHA_Driver</span></code> to retreive soil profile data. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>: emit soilData_updated(<code class="docutils literal notranslate"><span class="pre">xarray.Dataset</span></code>) containing all data relevant for representing the soil profile </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="updateStresses">
+<span class="target" id="class_analyzer_1_1_p_l_h_a__triggering_calc_1_1_p_l_h_a__trig_1ab8107a18406fc6d67f78033e37a85e0e"></span><span class="sig-name descname"><span class="pre">updateStresses</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#updateStresses" title="Permalink to this definition"></a></dt>
+<dd><p>This function updates the hydrostatic pressure and effective stress, called when the user updates the groundwater table Also updates the susceptibility calculation. </p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="N160cs_helper">
+<span class="target" id="class_analyzer_1_1_p_l_h_a__triggering_calc_1_1_p_l_h_a__trig_1ae2cc30c2437e417fe73ccbf40edb7c2c"></span><span class="sig-name descname"><span class="pre">N160cs_helper</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#N160cs_helper" title="Permalink to this definition"></a></dt>
+<dd><p>Class method that calculates N160cs for SPT data in self.soilFull (Equation 2.23 of CGM 2014 Report) </p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="defaultSusceptCalc">
+<span class="target" id="class_analyzer_1_1_p_l_h_a__triggering_calc_1_1_p_l_h_a__trig_1a2b890eb5387bfb955130e94065ec8e3b"></span><span class="sig-name descname"><span class="pre">defaultSusceptCalc</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#defaultSusceptCalc" title="Permalink to this definition"></a></dt>
+<dd><p>This function performs the default susceptibility calculation on initiation of the soil profile. </p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="calcSusceptCPT">
+<span class="target" id="class_analyzer_1_1_p_l_h_a__triggering_calc_1_1_p_l_h_a__trig_1a5a614810a8f68c76e7caab922d2f752f"></span><span class="sig-name descname"><span class="pre">calcSusceptCPT</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">qMax</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">200</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">IcMax</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2.6</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">limitSI</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.5</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#calcSusceptCPT" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>qMax</strong> – The maximum $q_{c1Ncs}$ value considered to be susceptible, default is 200 </p></li>
+<li><p><strong>IcMax</strong> – The minimum $I_c$ value considered to be susceptible, default is 2.5 </p></li>
+<li><p><strong>limitSI</strong> – The threshold susceptibility index value to be considered susceptible, default is 0.5. </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="calcSusceptSPT">
+<span class="target" id="class_analyzer_1_1_p_l_h_a__triggering_calc_1_1_p_l_h_a__trig_1a3a211752ff4b9d02926dcf49a3a37e98"></span><span class="sig-name descname"><span class="pre">calcSusceptSPT</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">wtBI</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">wtBS</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">limitSI</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.5</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#calcSusceptSPT" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>wtBI</strong> – Relative weight to Boulanger &amp; Idriss susceptibility criteria, default is 0.5 </p></li>
+<li><p><strong>wtBI</strong> – Relative weight to Bray &amp; Sancio susceptibility criteria, default is 0.5 </p></li>
+<li><p><strong>limitSI</strong> – The threshold susceptibility index value to be considered susceptible, default is 0.5. </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="setupNSHMruns">
+<span class="target" id="class_analyzer_1_1_p_l_h_a__triggering_calc_1_1_p_l_h_a__trig_1a4dcd427bc0d94f76671e32f2d349df7d"></span><span class="sig-name descname"><span class="pre">setupNSHMruns</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#setupNSHMruns" title="Permalink to this definition"></a></dt>
+<dd><p>Add keys for datasets of sites that need to have PSHAs run, and sites that already have usgs data. </p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="runNSHMPhaz">
+<span class="target" id="class_analyzer_1_1_p_l_h_a__triggering_calc_1_1_p_l_h_a__trig_1a9f6fc39fc0a342a5a6189b9933dde6a5"></span><span class="sig-name descname"><span class="pre">runNSHMPhaz</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">siteDS</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#runNSHMPhaz" title="Permalink to this definition"></a></dt>
+<dd><p>Searches USGSnetCDF directory to see if there is existing data for each site. </p>
+<p><div class="highlight-default notranslate"><div class="highlight"><pre><span></span>   <span class="n">Helper</span> <span class="n">function</span> <span class="k">for</span> <span class="n">running</span> <span class="ow">and</span> <span class="n">processing</span> <span class="n">psha</span> <span class="n">data</span> <span class="k">for</span> <span class="n">sites</span> <span class="ow">in</span> <span class="n">a</span>
+   <span class="n">given</span> <span class="n">source</span> <span class="n">catalog</span>
+
+
+   <span class="nd">@param</span> <span class="n">siteDS</span><span class="p">:</span>
+   <span class="nd">@return</span> <span class="n">nshmpDS</span><span class="p">:</span>
+   <span class="nd">@return</span> <span class="n">procDS</span><span class="p">:</span>
+</pre></div>
+</div>
+ </p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="generateMasterList">
+<span class="target" id="class_analyzer_1_1_p_l_h_a__triggering_calc_1_1_p_l_h_a__trig_1aacc394b5d7ac6232dffe85793f24937a"></span><span class="sig-name descname"><span class="pre">generateMasterList</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#generateMasterList" title="Permalink to this definition"></a></dt>
+<dd><p>Loops through list of sites, interpolate usgs data and generate xArray dataset for input to liquefaction analysis. </p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="genHazCurveDS">
+<span class="target" id="class_analyzer_1_1_p_l_h_a__triggering_calc_1_1_p_l_h_a__trig_1a3859ce3298abd75551958cf969456002"></span><span class="sig-name descname"><span class="pre">genHazCurveDS</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">siteJ</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#genHazCurveDS" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>siteJ</strong> – some desc </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="checkExistingData">
+<span class="target" id="class_analyzer_1_1_p_l_h_a__triggering_calc_1_1_p_l_h_a__trig_1a8b570c379f2c18bad7aaa4434663d106"></span><span class="sig-name descname"><span class="pre">checkExistingData</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">siteDS</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#checkExistingData" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>siteDS</strong> – </p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>: </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="getOutputFiles">
+<span class="target" id="class_analyzer_1_1_p_l_h_a__triggering_calc_1_1_p_l_h_a__trig_1a5e1c01b926c90bba7e3322109f2157f7"></span><span class="sig-name descname"><span class="pre">getOutputFiles</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#getOutputFiles" title="Permalink to this definition"></a></dt>
+<dd><p>Helper function that generates list of existing nshmp output file names. </p>
+<p><div class="highlight-default notranslate"><div class="highlight"><pre><span></span>   <span class="nd">@return</span><span class="p">:</span> <span class="n">outFiles</span>
+</pre></div>
+</div>
+ </p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="checkOutput">
+<span class="target" id="class_analyzer_1_1_p_l_h_a__triggering_calc_1_1_p_l_h_a__trig_1a5f655540b89408c51ef04c9f8ea8a741"></span><span class="sig-name descname"><span class="pre">checkOutput</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">siteDS</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">targetTR</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">outFiles</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#checkOutput" title="Permalink to this definition"></a></dt>
+<dd><p>Helper function that reads through nshmp output folders and makes sure they contain the necessary data. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>siteDS</strong> – </p></li>
+<li><p><strong>targetTR</strong> – </p></li>
+<li><p><strong>outFiles</strong> – </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>outFiles2: </p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>rerunTR: </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="generateFSLdataset">
+<span class="target" id="class_analyzer_1_1_p_l_h_a__triggering_calc_1_1_p_l_h_a__trig_1a6ac350a663ec3a37fa21c7201bc3e65a"></span><span class="sig-name descname"><span class="pre">generateFSLdataset</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hazDS</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#generateFSLdataset" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>hazDS</strong> – </p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>: </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="extractSusceptDS">
+<span class="target" id="class_analyzer_1_1_p_l_h_a__triggering_calc_1_1_p_l_h_a__trig_1a409b9189f4d25cd954c5323f49c1b40b"></span><span class="sig-name descname"><span class="pre">extractSusceptDS</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fslDS</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#extractSusceptDS" title="Permalink to this definition"></a></dt>
+<dd><p>Utility function that generates and returns dataset of only susceptible soil elements. </p>
+<p>Used by each of the FSL calculation methods.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>fslDS</strong> – xArray dataset of all soil data, merged with seismic hazard data </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="FSL_singleCalc">
+<span class="target" id="class_analyzer_1_1_p_l_h_a__triggering_calc_1_1_p_l_h_a__trig_1aaa7e27c3b8d5ca89a113753825313b8f"></span><span class="sig-name descname"><span class="pre">FSL_singleCalc</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fslDS</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">userDef</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pga_ud</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Mw_ud</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">trPGA</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2475</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">MwType</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'modal'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#FSL_singleCalc" title="Permalink to this definition"></a></dt>
+<dd><p>Single-scenario calculation, via either direct user inputs or a user-defined PGA return period. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>fslDS</strong> – </p></li>
+<li><p><strong>userDef</strong> – </p></li>
+<li><p><strong>pga_ud</strong> – </p></li>
+<li><p><strong>Mw_ud</strong> – </p></li>
+<li><p><strong>trPGA</strong> – </p></li>
+<li><p><strong>MwType</strong> – </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>: </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="FSL_singleHelper">
+<span class="target" id="class_analyzer_1_1_p_l_h_a__triggering_calc_1_1_p_l_h_a__trig_1a5b8b7c29328913e06e86c4891315c1d6"></span><span class="sig-name descname"><span class="pre">FSL_singleHelper</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fslDS</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pga_ss</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Mw_ss</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#FSL_singleHelper" title="Permalink to this definition"></a></dt>
+<dd><p>Calculating a single-scenario FSL profile, with user-defined amax and Mw. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>fslDS</strong> – </p></li>
+<li><p><strong>pga_ss</strong> – </p></li>
+<li><p><strong>Mw_ss</strong> – </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>: </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="FSL_multiCalc">
+<span class="target" id="class_analyzer_1_1_p_l_h_a__triggering_calc_1_1_p_l_h_a__trig_1aceb6d15fee636d72d0f78106c29737b4"></span><span class="sig-name descname"><span class="pre">FSL_multiCalc</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fslDS</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">trPGA_mult</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2475</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#FSL_multiCalc" title="Permalink to this definition"></a></dt>
+<dd><p>Calculating a multi-scenario LHA at a given PGA return period. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>fslDS</strong> – </p></li>
+<li><p><strong>trPGA_mult</strong> – </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>: </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="FSL_hazCalc">
+<span class="target" id="class_analyzer_1_1_p_l_h_a__triggering_calc_1_1_p_l_h_a__trig_1a8068913b434d79f71e4298c7fbecaa55"></span><span class="sig-name descname"><span class="pre">FSL_hazCalc</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fslDS</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">TRs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">np.asarray([225,</span> <span class="pre">475,</span> <span class="pre">975,</span> <span class="pre">2475])</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">disagg</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#FSL_hazCalc" title="Permalink to this definition"></a></dt>
+<dd><p>Calculates FSL exceedances and integrates to get FSL hazard curves for a given site. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>fslDS</strong> – </p></li>
+<li><p><strong>TRs</strong> – </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>: </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="FSLprofile_calc">
+<span class="target" id="class_analyzer_1_1_p_l_h_a__triggering_calc_1_1_p_l_h_a__trig_1ad388aa0e3ee6932aa35e1339ce766414"></span><span class="sig-name descname"><span class="pre">FSLprofile_calc</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fslDS</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">TRs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">np.asarray([475,</span> <span class="pre">975,</span> <span class="pre">2475])</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#FSLprofile_calc" title="Permalink to this definition"></a></dt>
+<dd><p>Helper Function to Calculate Risk-Consistent FSL values for all depths for a given set of target return periods. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>fslDS</strong> – </p></li>
+<li><p><strong>TRs</strong> – </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>: </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="FSLprofile_update">
+<span class="target" id="class_analyzer_1_1_p_l_h_a__triggering_calc_1_1_p_l_h_a__trig_1a1bebd989bfb4044302f131083626d8c0"></span><span class="sig-name descname"><span class="pre">FSLprofile_update</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fslDS</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">TRadd</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#FSLprofile_update" title="Permalink to this definition"></a></dt>
+<dd><p>Helper function for updating FSL return periods. </p>
+<p><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Added</span> <span class="n">by</span> <span class="n">Peter</span><span class="p">:</span> <span class="n">this</span> <span class="n">belongs</span> <span class="n">into</span> <span class="n">the</span> <span class="n">UI</span>
+<span class="n">Commented</span> <span class="n">out</span> <span class="n">by</span> <span class="n">Andrew</span><span class="p">:</span> <span class="n">nope</span><span class="p">,</span> <span class="n">this</span> <span class="ow">is</span> <span class="n">part</span> <span class="n">of</span> <span class="n">the</span> <span class="n">analyzer</span> <span class="n">because</span> <span class="n">it</span> 
+<span class="n">should</span> <span class="n">update</span> <span class="bp">self</span><span class="o">.</span><span class="n">fslDS</span> <span class="ow">and</span> <span class="n">be</span> <span class="n">part</span> <span class="n">of</span> <span class="n">the</span> <span class="n">report</span>
+</pre></div>
+</div>
+ </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>fslDS</strong> – </p></li>
+<li><p><strong>TRadd</strong> – </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>:</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py">
+<span class="target" id="class_analyzer_1_1interpolate__deagg_1_1interpolate_deagg"></span><span class="sig-name descname"><span class="pre">Analyzer.interpolate_deagg.interpolateDeagg</span> <span class="pre">:</span> <span class="pre">public</span> <span class="pre">object</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py">
+<span class="target" id="class_analyzer_1_1nshmp__process_1_1nshmp_process"></span><span class="sig-name descname"><span class="pre">Analyzer.nshmp_process.nshmpProcess</span> <span class="pre">:</span> <span class="pre">public</span> <span class="pre">object</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py">
+<span class="target" id="class_analyzer_1_1nshmp__single_1_1nshmp_single"></span><span class="sig-name descname"><span class="pre">Analyzer.nshmp_single.nshmpSingle</span> <span class="pre">:</span> <span class="pre">public</span> <span class="pre">object</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py">
+<span class="target" id="class_analyzer_1_1nshmp__wrapper_1_1nshmp_analysis"></span><span class="sig-name descname"><span class="pre">Analyzer.nshmp_wrapper.nshmpAnalysis</span> <span class="pre">:</span> <span class="pre">public</span> <span class="pre">object</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py">
+<span class="target" id="class_analyzer_1_1process_input_file_1_1_input_data"></span><span class="sig-name descname"><span class="pre">Analyzer.processInputFile.InputData</span> <span class="pre">:</span> <span class="pre">public</span> <span class="pre">object</span></span></dt>
+<dd><p>Helper function that takes site data and converts to a dataset. </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="processSiteInput">
+<span class="target" id="class_analyzer_1_1process_input_file_1_1_input_data_1a0e0963dd5670206b22cc056118905bb5"></span><span class="sig-name descname"><span class="pre">processSiteInput</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#processSiteInput" title="Permalink to this definition"></a></dt>
+<dd><p>Read site data from excel file and generate a xArray dataset to be used as input into nshmp-wrapper. </p>
+<p>
+This needs extra error checking: crashes if loaded file is not in the expected format! </p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>: True if successful, False otherwise</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="genSiteDataset">
+<span class="target" id="class_analyzer_1_1process_input_file_1_1_input_data_1a71ea563b42d7f9b85e1902d2488ed11a"></span><span class="sig-name descname"><span class="pre">genSiteDataset</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">siteDF</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#genSiteDataset" title="Permalink to this definition"></a></dt>
+<dd><p>Helper function for converting PSHA data to Dataset object for input to PSHA. </p>
+<p><div class="highlight-default notranslate"><div class="highlight"><pre><span></span>   <span class="nd">@param</span> <span class="n">siteDF</span><span class="p">:</span> <span class="n">describe</span>
+   <span class="nd">@return</span><span class="p">:</span> <span class="n">the</span> <span class="n">site</span> <span class="n">information</span> <span class="k">as</span> <span class="n">an</span> <span class="n">xarray</span><span class="o">.</span><span class="n">Dataset</span>
+</pre></div>
+</div>
+ </p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="processCPTinput">
+<span class="target" id="class_analyzer_1_1process_input_file_1_1_input_data_1a3cfe14eda88118e6b859aaf58e9b2aa7"></span><span class="sig-name descname"><span class="pre">processCPTinput</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Ic_cutoff</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2.6</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">q_cutoff</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">200</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#processCPTinput" title="Permalink to this definition"></a></dt>
+<dd><p>Reads CPT data file and generates xArray dataset. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>Ic_cutoff</strong> – describe </p></li>
+<li><p><strong>q_cutoff</strong> – describe </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="processSPTinput">
+<span class="target" id="class_analyzer_1_1process_input_file_1_1_input_data_1a00ad3b2033d751ee77e9937e0dae4c6c"></span><span class="sig-name descname"><span class="pre">processSPTinput</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#processSPTinput" title="Permalink to this definition"></a></dt>
+<dd><p>Reads SPT data file and generates xArray dataset. </p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py">
+<span class="target" id="class_analyzer_1_1triggering__models_1_1_boulanger___idriss__2012___s_p_t_1_1_b_i2012___s_p_t"></span><span class="sig-name descname"><span class="pre">Analyzer.triggering_models.Boulanger_Idriss_2012_SPT.BI2012_SPT</span> <span class="pre">:</span> <span class="pre">public</span> <span class="pre">object</span></span></dt>
+<dd><div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="id5">
+<span class="target" id="class_analyzer_1_1triggering__models_1_1_boulanger___idriss__2012___s_p_t_1_1_b_i2012___s_p_t_1a70ca0f7200faf072409a29d5ec812755"></span><span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">DS</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">PL_det</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">np.asarray([0.15])</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sigma_r</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">np.asarray([0.13])</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#id5" title="Permalink to this definition"></a></dt>
+<dd><p>Soil, Mw, and PGA input now combined as an xarray dataset. </p>
+<p><div class="highlight-default notranslate"><div class="highlight"><pre><span></span>   <span class="nd">@param</span> <span class="n">DS</span><span class="p">:</span>
+   <span class="nd">@param</span> <span class="n">PL_det</span><span class="p">:</span>
+   <span class="nd">@param</span> <span class="n">sigma_r</span><span class="p">:</span>
+</pre></div>
+</div>
+ </p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="calc_N160cs">
+<span class="target" id="class_analyzer_1_1triggering__models_1_1_boulanger___idriss__2012___s_p_t_1_1_b_i2012___s_p_t_1a613197dd31c28c2d9cd532429e710ae8"></span><span class="sig-name descname"><span class="pre">calc_N160cs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#calc_N160cs" title="Permalink to this definition"></a></dt>
+<dd><p>Clean Sand Correction for N160 (Equation 2.23 of CGM 2014 Report) </p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="calc_MSF_BI12SPT">
+<span class="target" id="class_analyzer_1_1triggering__models_1_1_boulanger___idriss__2012___s_p_t_1_1_b_i2012___s_p_t_1a18a2e97c74cf84d24dc48ebe18c18c26"></span><span class="sig-name descname"><span class="pre">calc_MSF_BI12SPT</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#calc_MSF_BI12SPT" title="Permalink to this definition"></a></dt>
+<dd><p>Calculate Magnitude Scaling Factor. </p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="calc_rd_BI12SPT">
+<span class="target" id="class_analyzer_1_1triggering__models_1_1_boulanger___idriss__2012___s_p_t_1_1_b_i2012___s_p_t_1a736b1475ad7fb248016d218ef8027f7f"></span><span class="sig-name descname"><span class="pre">calc_rd_BI12SPT</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#calc_rd_BI12SPT" title="Permalink to this definition"></a></dt>
+<dd><p>Calculate depth reduction factor, r_d. </p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="calc_Ksigma">
+<span class="target" id="class_analyzer_1_1triggering__models_1_1_boulanger___idriss__2012___s_p_t_1_1_b_i2012___s_p_t_1a084d20515bcf77f72b9890a1829c9845"></span><span class="sig-name descname"><span class="pre">calc_Ksigma</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#calc_Ksigma" title="Permalink to this definition"></a></dt>
+<dd><p>Overburden correction - K_sigma. </p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="calc_CSRref">
+<span class="target" id="class_analyzer_1_1triggering__models_1_1_boulanger___idriss__2012___s_p_t_1_1_b_i2012___s_p_t_1a55768eb30741bb977429e6725cc32d15"></span><span class="sig-name descname"><span class="pre">calc_CSRref</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#calc_CSRref" title="Permalink to this definition"></a></dt>
+<dd><p>Calculate CSR for M=7.5, sigvp=1atm. </p>
+<p>CSR_7.5,1atm = 0.65*amax*(sigv/sigvp)*r_d*1/MSF*1/K_sigma Used for both Deterministic FS and Probabilistic calculations </p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="calc_CRR">
+<span class="target" id="class_analyzer_1_1triggering__models_1_1_boulanger___idriss__2012___s_p_t_1_1_b_i2012___s_p_t_1ac472daa993b5ef219921ba2310e86efe"></span><span class="sig-name descname"><span class="pre">calc_CRR</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#calc_CRR" title="Permalink to this definition"></a></dt>
+<dd><p>Calculate Deterministic CRR - Using Eq. </p>
+<p>2.25 in CGM Report (2014)</p>
+<p>Calculates Cyclic Resistance Ratios for:</p>
+<p>(1) Deterministic factor of safety calculation (using a fitting parameter of 2.8 [Idriss and Boulanger, 2008])</p>
+<p>(2) Probabilistic FoS calculation (using fitting parameter of 2.67 [Boulanger and Idriss, 2012]) </p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="calcFSdet_single">
+<span class="target" id="class_analyzer_1_1triggering__models_1_1_boulanger___idriss__2012___s_p_t_1_1_b_i2012___s_p_t_1a5adc961701303dfa12dbb84faa4acfea"></span><span class="sig-name descname"><span class="pre">calcFSdet_single</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">amax</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Mw</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#calcFSdet_single" title="Permalink to this definition"></a></dt>
+<dd><p>Single scenario FSL calculation - returns a value. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>self</strong> – </p></li>
+<li><p><strong>amax</strong> – </p></li>
+<li><p><strong>Mw</strong> – </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>: FSLss </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="calc_FSdet">
+<span class="target" id="class_analyzer_1_1triggering__models_1_1_boulanger___idriss__2012___s_p_t_1_1_b_i2012___s_p_t_1a7a64d7f34b2ab62e93b9674b480dd277"></span><span class="sig-name descname"><span class="pre">calc_FSdet</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#calc_FSdet" title="Permalink to this definition"></a></dt>
+<dd><p>Deterministic Factor of Safety Calculation. </p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="calc_prob_liq">
+<span class="target" id="class_analyzer_1_1triggering__models_1_1_boulanger___idriss__2012___s_p_t_1_1_b_i2012___s_p_t_1a2621cb91ed6d0f07b4a26755ec7bb504"></span><span class="sig-name descname"><span class="pre">calc_prob_liq</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#calc_prob_liq" title="Permalink to this definition"></a></dt>
+<dd><p>Calculating Probability of Liquefaction, <span class="math notranslate nohighlight">\(P[FS_L&lt;1]\)</span>. </p>
+<p>Model Coefficients for CRR (assuming standard deviation of 0.13) Nearly identical to deterministic CRR coefficients, with a slightly lower fitting parameter (2.67, instead of 2.80) </p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="calc_prob_FS">
+<span class="target" id="class_analyzer_1_1triggering__models_1_1_boulanger___idriss__2012___s_p_t_1_1_b_i2012___s_p_t_1a916274b8a336637c84553ca8a941cbec"></span><span class="sig-name descname"><span class="pre">calc_prob_FS</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#calc_prob_FS" title="Permalink to this definition"></a></dt>
+<dd><p>Calculating Probability of non-exceedance of a given <span class="math notranslate nohighlight">\(FS_L\)</span> (equivalent to P_liq if user-defined FS_L is 1) and corresponding probability density. </p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="calc_detFS_PL">
+<span class="target" id="class_analyzer_1_1triggering__models_1_1_boulanger___idriss__2012___s_p_t_1_1_b_i2012___s_p_t_1a879e678db41d89f7948c4fcd23771ecd"></span><span class="sig-name descname"><span class="pre">calc_detFS_PL</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#calc_detFS_PL" title="Permalink to this definition"></a></dt>
+<dd><p>Calculates deterministic <span class="math notranslate nohighlight">\(FS_{liq}\)</span> for a given <span class="math notranslate nohighlight">\(P_L\)</span> (default set at 15%) </p>
+<p><ul class="simple">
+<li><p>CRR from Eq. 30 in Boulanger and Idriss (2012)</p></li>
+<li><p>CRR is reference (M=7.5, 1 atm) </p></li>
+</ul>
+</p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py">
+<span class="target" id="class_analyzer_1_1triggering__models_1_1_boulanger___idriss__2015___c_p_t_1_1_b_i2015___c_p_t"></span><span class="sig-name descname"><span class="pre">Analyzer.triggering_models.Boulanger_Idriss_2015_CPT.BI2015_CPT</span> <span class="pre">:</span> <span class="pre">public</span> <span class="pre">object</span></span></dt>
+<dd><div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="id6">
+<span class="target" id="class_analyzer_1_1triggering__models_1_1_boulanger___idriss__2015___c_p_t_1_1_b_i2015___c_p_t_1a906d6731fc2539fe7482755294b2daf1"></span><span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">DS</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">PL_det</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">np.asarray([0.15])</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">uncertainty</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'TOTAL'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#id6" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>DS</strong> – </p></li>
+<li><p><strong>PL_det</strong> – </p></li>
+<li><p><strong>uncertainty</strong> – </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="calc_MSF_BI15CPT">
+<span class="target" id="class_analyzer_1_1triggering__models_1_1_boulanger___idriss__2015___c_p_t_1_1_b_i2015___c_p_t_1a0563a4e1c0c7e5d411d7846e2ce2e3b8"></span><span class="sig-name descname"><span class="pre">calc_MSF_BI15CPT</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#calc_MSF_BI15CPT" title="Permalink to this definition"></a></dt>
+<dd><p>Calculate Magnitude Scaling Factor. </p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="calc_rd_BI15">
+<span class="target" id="class_analyzer_1_1triggering__models_1_1_boulanger___idriss__2015___c_p_t_1_1_b_i2015___c_p_t_1a9f703f573bf523d092d57faaab31ff31"></span><span class="sig-name descname"><span class="pre">calc_rd_BI15</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#calc_rd_BI15" title="Permalink to this definition"></a></dt>
+<dd><p>Calculate depth reduction factor, <span class="math notranslate nohighlight">\(r_d\)</span>. </p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="id7">
+<span class="target" id="class_analyzer_1_1triggering__models_1_1_boulanger___idriss__2015___c_p_t_1_1_b_i2015___c_p_t_1a084d20515bcf77f72b9890a1829c9845"></span><span class="sig-name descname"><span class="pre">calc_Ksigma</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#id7" title="Permalink to this definition"></a></dt>
+<dd><p>Overburden correction - K_sigma. </p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="id8">
+<span class="target" id="class_analyzer_1_1triggering__models_1_1_boulanger___idriss__2015___c_p_t_1_1_b_i2015___c_p_t_1ac472daa993b5ef219921ba2310e86efe"></span><span class="sig-name descname"><span class="pre">calc_CRR</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#id8" title="Permalink to this definition"></a></dt>
+<dd><p>Calculate Deterministic CRR - Using Eq. </p>
+<p>2.24 in CGM Report (2014)</p>
+<p>Calculates Cyclic Resistance Ratios for:</p>
+<p>(1) Deterministic factor of safety calculation (using a fitting parameter of 2.8 [Idriss and Boulanger, 2008])</p>
+<p>(2) Probabilistic FoS calculation (using fitting parameter of 2.67 [Boulanger and Idriss, 2012]) </p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="id9">
+<span class="target" id="class_analyzer_1_1triggering__models_1_1_boulanger___idriss__2015___c_p_t_1_1_b_i2015___c_p_t_1a5adc961701303dfa12dbb84faa4acfea"></span><span class="sig-name descname"><span class="pre">calcFSdet_single</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">amax</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Mw</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#id9" title="Permalink to this definition"></a></dt>
+<dd><p>Single scenario FSL calculation - returns a value. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>self</strong> – </p></li>
+<li><p><strong>amax</strong> – </p></li>
+<li><p><strong>Mw</strong> – </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>: FSLss </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="id10">
+<span class="target" id="class_analyzer_1_1triggering__models_1_1_boulanger___idriss__2015___c_p_t_1_1_b_i2015___c_p_t_1a7a64d7f34b2ab62e93b9674b480dd277"></span><span class="sig-name descname"><span class="pre">calc_FSdet</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#id10" title="Permalink to this definition"></a></dt>
+<dd><p>Deterministic Factor of Safety Calculation. </p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="id11">
+<span class="target" id="class_analyzer_1_1triggering__models_1_1_boulanger___idriss__2015___c_p_t_1_1_b_i2015___c_p_t_1a2621cb91ed6d0f07b4a26755ec7bb504"></span><span class="sig-name descname"><span class="pre">calc_prob_liq</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#id11" title="Permalink to this definition"></a></dt>
+<dd><p>Calculating Probability of Liquefaction, P[FS_L&lt;1]. </p>
+<p>Model Coefficients for CRR (assuming standard deviation of 0.13) Nearly identical to deterministic CRR coefficients, with a slightly lower fitting parameter (2.60, instead of 2.80) </p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="id12">
+<span class="target" id="class_analyzer_1_1triggering__models_1_1_boulanger___idriss__2015___c_p_t_1_1_b_i2015___c_p_t_1a916274b8a336637c84553ca8a941cbec"></span><span class="sig-name descname"><span class="pre">calc_prob_FS</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#id12" title="Permalink to this definition"></a></dt>
+<dd><p>Calculating Probability of non-exceedance of a given <span class="math notranslate nohighlight">\(FS_L\)</span> (equivalent to <span class="math notranslate nohighlight">\(P_{liq}\)</span> if user-defined <span class="math notranslate nohighlight">\(FS_L\)</span> is 1) and corresponding probability density. </p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="id13">
+<span class="target" id="class_analyzer_1_1triggering__models_1_1_boulanger___idriss__2015___c_p_t_1_1_b_i2015___c_p_t_1a879e678db41d89f7948c4fcd23771ecd"></span><span class="sig-name descname"><span class="pre">calc_detFS_PL</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#id13" title="Permalink to this definition"></a></dt>
+<dd><p>Calculates deterministic FSliq for a given <span class="math notranslate nohighlight">\(P_L\)</span> (default set at 15%) </p>
+<p><ul class="simple">
+<li><p>CRR from Eq. 30 in Boulanger and Idriss (2012)</p></li>
+<li><p>CRR is reference (M=7.5, 1 atm) </p></li>
+</ul>
+</p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py">
+<span class="target" id="class_analyzer_1_1triggering__models_1_1_cetin__etal__2004_1_1_cetin_e_a__2004"></span><span class="sig-name descname"><span class="pre">Analyzer.triggering_models.Cetin_etal_2004.CetinEA_2004</span> <span class="pre">:</span> <span class="pre">public</span> <span class="pre">object</span></span></dt>
+<dd><div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="id14">
+<span class="target" id="class_analyzer_1_1triggering__models_1_1_cetin__etal__2004_1_1_cetin_e_a__2004_1ad92198de31ed57f26b91658b6744d553"></span><span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">DS</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">PL_det</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">np.asarray([0.15])</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sigma</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'Total'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#id14" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>DS</strong> – </p></li>
+<li><p><strong>PL_det</strong> – </p></li>
+<li><p><strong>sigma</strong> – </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="calc_CEA04rd">
+<span class="target" id="class_analyzer_1_1triggering__models_1_1_cetin__etal__2004_1_1_cetin_e_a__2004_1a9ce473203488f4ba96bef8344b8312f5"></span><span class="sig-name descname"><span class="pre">calc_CEA04rd</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#calc_CEA04rd" title="Permalink to this definition"></a></dt>
+<dd><p>Calculating depth reduction factor, <span class="math notranslate nohighlight">\(r_d\)</span>. </p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="calc_CSReq">
+<span class="target" id="class_analyzer_1_1triggering__models_1_1_cetin__etal__2004_1_1_cetin_e_a__2004_1a3f5cd9faa1e897a87a858f689e8b2b29"></span><span class="sig-name descname"><span class="pre">calc_CSReq</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#calc_CSReq" title="Permalink to this definition"></a></dt>
+<dd><p>Calculate CSReq - NOT adjusted for K_sigma or Magnitude. </p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="id15">
+<span class="target" id="class_analyzer_1_1triggering__models_1_1_cetin__etal__2004_1_1_cetin_e_a__2004_1a2621cb91ed6d0f07b4a26755ec7bb504"></span><span class="sig-name descname"><span class="pre">calc_prob_liq</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#id15" title="Permalink to this definition"></a></dt>
+<dd><p>Calculating Probability of Liquefaction, <span class="math notranslate nohighlight">\(P[FS_L&lt;1]\)</span>. </p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="calc_prob_FSL">
+<span class="target" id="class_analyzer_1_1triggering__models_1_1_cetin__etal__2004_1_1_cetin_e_a__2004_1a275d2837272a0004e8af6d6f4bfd64a7"></span><span class="sig-name descname"><span class="pre">calc_prob_FSL</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#calc_prob_FSL" title="Permalink to this definition"></a></dt>
+<dd><p>Calculating Probability of non-exceedance of a given <span class="math notranslate nohighlight">\(FS_L\)</span> (equivalent to <span class="math notranslate nohighlight">\(P_{liq}\)</span> if user-defined <span class="math notranslate nohighlight">\(FS_L\)</span> is 1) and corresponding probability density. </p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="calc_detFSL_CEA04">
+<span class="target" id="class_analyzer_1_1triggering__models_1_1_cetin__etal__2004_1_1_cetin_e_a__2004_1a243fbe2e3188bca01bf2c0d5c2e95e82"></span><span class="sig-name descname"><span class="pre">calc_detFSL_CEA04</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#calc_detFSL_CEA04" title="Permalink to this definition"></a></dt>
+<dd><p>Calculates deterministic <span class="math notranslate nohighlight">\(FS_{liq}\)</span> for a given <span class="math notranslate nohighlight">\(P_L\)</span> (default set at 15%) </p>
+<p><ul class="simple">
+<li><p>CRR from Eq. 20 in Cetin et al. (2002)</p></li>
+<li><p>CSReq adjusted for duration and overburden </p></li>
+</ul>
+</p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+<section id="helper-classes">
+<h2>Helper classes<a class="headerlink" href="#helper-classes" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py">
+<span class="target" id="class_p_s_h_a__wrapper_1_1_ground_motion_data"></span><span class="sig-name descname"><span class="pre">PSHA_wrapper.GroundMotionData</span> <span class="pre">:</span> <span class="pre">public</span> <span class="pre">object</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py">
+<span class="target" id="class_analyzer_1_1plotting_functions_1_1plha_plotter"></span><span class="sig-name descname"><span class="pre">Analyzer.plottingFunctions.plhaPlotter</span> <span class="pre">:</span> <span class="pre">public</span> <span class="pre">object</span></span></dt>
+<dd></dd></dl>
+
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="source_main_app.html" class="btn btn-neutral float-left" title="Main application" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="source_triggers.html" class="btn btn-neutral float-right" title="Triggering Module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, Andrew, Steve, Peter.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

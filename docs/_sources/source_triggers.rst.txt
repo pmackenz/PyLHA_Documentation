@@ -1,0 +1,21 @@
+
+Triggering Module
+===================
+
+.. doxygenclass:: Analyzer::triggering_models::Boulanger_Idriss_2012_SPT::BI2012_SPT
+   :project: qPLHA
+   :members:
+
+
+.. doxygenclass:: Analyzer::triggering_models::Boulanger_Idriss_2015_CPT::BI2015_CPT
+   :project: qPLHA
+   :members:
+
+
+.. doxygenclass:: Analyzer::triggering_models::Cetin_etal_2004::CetinEA_2004
+   :project: qPLHA
+   :members:
+
+
+
+

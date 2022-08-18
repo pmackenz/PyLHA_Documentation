@@ -1,0 +1,93 @@
+Example 1: SPT profile
+-----------------------
+
+Site location information
+
+1.  Site location can be entered through the **Site Location** module by
+
+    - entering numeric coordinates, or
+    - selecting a location by mouse click on the interactive map.
+      (This requires checking the option above the map view.)
+
+2.  Alternatively, the site information will be set accordingly when loading a
+    pre-computed hazard data set in the **Hazard** module.
+
+.. image:: Figures/SiteLocationPage.png
+    :align: center
+    :alt: Site Location Page
+    :width: 650px
+
+Soil profile definition
+
+* soil profiles are entered through import from a formatted Excel spread sheet.
+  (The provided templates need to be used.)  Go to the **Soil Profile** module and click the **Load Soil Profile** button to load your soil data.
+
+   Two demo profiles have been installed with the software.  They can be found in :code:`Users\\YOUR_USER\\Documents\\PyLHA\\SoilProfiles`.
+   That folder is also the recommended location to store your profile definition files.
+
+.. image:: Figures/ProfileSelectSPT.png
+    :align: center
+    :alt: selecting a demo SPT profile
+    :width: 650px
+
+A successful import will show the provided data in a table and as a visual representation.
+
+.. image:: Figures/ProfilePlotSPT.png
+    :align: center
+    :alt: typical SPT profile plot
+    :width: 650px
+
+The **Hazard** module is restricted to pre-computed hazard data (:math:`\beta`-version only) and will direct you to the selection interface.  Four demo profiles were installed with this software.
+They can be found in :code:`Users\\YOUR_USER\\Documents\\PyLHA\\ExistingHazardData`.
+In the production release, any hazard data computed will be stored in that folder for efficient computations for this or nearby sites.
+
+.. image:: Figures/HazardDataSelection.png
+    :align: center
+    :alt: precomputed Hazard Data Selection
+    :width: 650px
+
+You may see the following dialog warning about a non-matching location for the pre-computed hazard data.
+
+.. image:: Figures/SiteWarningDialog.png
+    :align: center
+    :alt:
+    :width: 600px
+
+This dialog will change in the final release when site specific hazard data can be downloaded from the USGS web interface and processed on your computer.
+In the meantime, please accept the shift in the site location.
+
+.. image:: Figures/HazardDataPlot.png
+    :align: center
+    :alt: Hazard Data Plot
+    :width: 650px
+
+.. image:: Figures/SusceptibilityPlotSPT.png
+    :align: center
+    :alt: Susceptibility Plot for a SPT profile
+    :width: 650px
+
+Running a `Single Scenario Triggering` analysis for this soil profile.
+(Other triggering scenarios will be shown in **Example 2: CPT profile**)
+
+* make your selections for the single scenario
+* click the **COMPUTE** button. (There may be a short delay while the analysis runs.)
+* Results appear in plots once computed.
+  (All plots can be exported to PNG or PDF files or copied to the ClipBoard and pasted into, e.g., Word)
+
+.. image:: Figures/SingleScenarioSPT.png
+    :align: center
+    :alt: Single Scenario triggering plot for a SPT profile
+    :width: 650px
+
+* All results are also available in numeric form in a tab behind the plots.
+  (numeric data can be exported to Excel through the **Report** module)
+
+.. image:: Figures/SingleScenarioSPT-2.png
+    :align: center
+    :alt: Single Scenario triggering numeric data for a SPT profile
+    :width: 650px
+
+
+
+
+

@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Example 1: SPT profile &mdash; PyLHA v0.99 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="author" title="About these documents" href="about.html" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Example 2: CPT profile" href="example2.html" />
+    <link rel="prev" title="Getting started" href="gettingStarted.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="index.html" class="icon icon-home"> PyLHA
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">User Manual</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="about.html">About PyLHA</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="user_manual.html">Application Manual</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="user_manual.html#setup">Setup</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="user_manual.html#examples">Examples</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Example 1: SPT profile</a></li>
+<li class="toctree-l3"><a class="reference internal" href="example2.html">Example 2: CPT profile</a></li>
+<li class="toctree-l3"><a class="reference internal" href="example3.html">Example 3: Creating hazard data for a custom site</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Technical Manual</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="technical_manual.html">Theory</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Source Docs</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="source_main_app.html">Main application</a></li>
+<li class="toctree-l1"><a class="reference internal" href="source_Analyzer.html">Analysis module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="source_triggers.html">Triggering Module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="source_UI.html">UI Module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="source_Graphics.html">Graphics Module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="source_LHA_driver.html">LHA_Driver Module</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">PyLHA</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="user_manual.html">Application Manual</a> &raquo;</li>
+      <li>Example 1: SPT profile</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/example1.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="example-1-spt-profile">
+<h1>Example 1: SPT profile<a class="headerlink" href="#example-1-spt-profile" title="Permalink to this heading"></a></h1>
+<p>Site location information</p>
+<ol class="arabic simple">
+<li><p>Site location can be entered through the <strong>Site Location</strong> module by</p>
+<ul class="simple">
+<li><p>entering numeric coordinates, or</p></li>
+<li><p>selecting a location by mouse click on the interactive map.
+(This requires checking the option above the map view.)</p></li>
+</ul>
+</li>
+<li><p>Alternatively, the site information will be set accordingly when loading a
+pre-computed hazard data set in the <strong>Hazard</strong> module.</p></li>
+</ol>
+<a class="reference internal image-reference" href="_images/SiteLocationPage.png"><img alt="Site Location Page" class="align-center" src="_images/SiteLocationPage.png" style="width: 650px;" /></a>
+<p>Soil profile definition</p>
+<ul>
+<li><p>soil profiles are entered through import from a formatted Excel spread sheet.
+(The provided templates need to be used.)  Go to the <strong>Soil Profile</strong> module and click the <strong>Load Soil Profile</strong> button to load your soil data.</p>
+<blockquote>
+<div><p>Two demo profiles have been installed with the software.  They can be found in <code class="code docutils literal notranslate"><span class="pre">Users\YOUR_USER\Documents\PyLHA\SoilProfiles</span></code>.
+That folder is also the recommended location to store your profile definition files.</p>
+</div></blockquote>
+</li>
+</ul>
+<a class="reference internal image-reference" href="_images/ProfileSelectSPT.png"><img alt="selecting a demo SPT profile" class="align-center" src="_images/ProfileSelectSPT.png" style="width: 650px;" /></a>
+<p>A successful import will show the provided data in a table and as a visual representation.</p>
+<a class="reference internal image-reference" href="_images/ProfilePlotSPT.png"><img alt="typical SPT profile plot" class="align-center" src="_images/ProfilePlotSPT.png" style="width: 650px;" /></a>
+<p>The <strong>Hazard</strong> module is restricted to pre-computed hazard data (<span class="math notranslate nohighlight">\(\beta\)</span>-version only) and will direct you to the selection interface.  Four demo profiles were installed with this software.
+They can be found in <code class="code docutils literal notranslate"><span class="pre">Users\YOUR_USER\Documents\PyLHA\ExistingHazardData</span></code>.
+In the production release, any hazard data computed will be stored in that folder for efficient computations for this or nearby sites.</p>
+<a class="reference internal image-reference" href="_images/HazardDataSelection.png"><img alt="precomputed Hazard Data Selection" class="align-center" src="_images/HazardDataSelection.png" style="width: 650px;" /></a>
+<p>You may see the following dialog warning about a non-matching location for the pre-computed hazard data.</p>
+<a class="reference internal image-reference" href="_images/SiteWarningDialog.png"><img alt="" class="align-center" src="_images/SiteWarningDialog.png" style="width: 600px;" /></a>
+<p>This dialog will change in the final release when site specific hazard data can be downloaded from the USGS web interface and processed on your computer.
+In the meantime, please accept the shift in the site location.</p>
+<a class="reference internal image-reference" href="_images/HazardDataPlot.png"><img alt="Hazard Data Plot" class="align-center" src="_images/HazardDataPlot.png" style="width: 650px;" /></a>
+<a class="reference internal image-reference" href="_images/SusceptibilityPlotSPT.png"><img alt="Susceptibility Plot for a SPT profile" class="align-center" src="_images/SusceptibilityPlotSPT.png" style="width: 650px;" /></a>
+<p>Running a <cite>Single Scenario Triggering</cite> analysis for this soil profile.
+(Other triggering scenarios will be shown in <strong>Example 2: CPT profile</strong>)</p>
+<ul class="simple">
+<li><p>make your selections for the single scenario</p></li>
+<li><p>click the <strong>COMPUTE</strong> button. (There may be a short delay while the analysis runs.)</p></li>
+<li><p>Results appear in plots once computed.
+(All plots can be exported to PNG or PDF files or copied to the ClipBoard and pasted into, e.g., Word)</p></li>
+</ul>
+<a class="reference internal image-reference" href="_images/SingleScenarioSPT.png"><img alt="Single Scenario triggering plot for a SPT profile" class="align-center" src="_images/SingleScenarioSPT.png" style="width: 650px;" /></a>
+<ul class="simple">
+<li><p>All results are also available in numeric form in a tab behind the plots.
+(numeric data can be exported to Excel through the <strong>Report</strong> module)</p></li>
+</ul>
+<a class="reference internal image-reference" href="_images/SingleScenarioSPT-2.png"><img alt="Single Scenario triggering numeric data for a SPT profile" class="align-center" src="_images/SingleScenarioSPT-2.png" style="width: 650px;" /></a>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="gettingStarted.html" class="btn btn-neutral float-left" title="Getting started" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="example2.html" class="btn btn-neutral float-right" title="Example 2: CPT profile" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, Andrew, Steve, Peter.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

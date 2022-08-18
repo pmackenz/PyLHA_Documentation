@@ -1,0 +1,5 @@
+Example 3: Creating hazard data for a custom site
+--------------------------------------------------
+
+This feature is deactivated in the :math:`\beta`-version since USGS has not yet released the required web-based interface.
+This feature will become available with the full release of `PyLHA`.

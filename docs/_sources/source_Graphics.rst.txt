@@ -1,0 +1,39 @@
+
+Graphics Module
+================
+
+.. doxygenclass:: Graphics::LayerPlot::LayerPlot
+   :project: qPLHA
+   :members:
+
+
+.. doxygenclass:: Graphics::HazardCurves::HazardCurves
+   :project: qPLHA
+   :members:
+
+
+.. doxygenclass:: Graphics::HistogramPlot::HistogramPlot
+   :project: qPLHA
+   :members:
+
+
+.. doxygenclass:: Graphics::FSLscenarioPlot::FSLscenarioPlot
+   :project: qPLHA
+   :members:
+
+
+.. doxygenclass:: Graphics::PlotMaster::PlotMaster
+   :project: qPLHA
+   :members:
+
+
+.. doxygenclass:: Graphics::PlotMaster::PlotterException
+   :project: qPLHA
+   :members:
+
+
+.. doxygenclass:: Graphics::PlotTest::PlotTester
+   :project: qPLHA
+   :members:
+
+

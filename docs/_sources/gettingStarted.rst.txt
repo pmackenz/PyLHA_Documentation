@@ -1,0 +1,17 @@
+Getting started
+==========================
+
+* install the software using the provided installer.  This will install the application and a custom python environment.
+* On the first run of `PyLHA`:
+   - allow for extra startup time since the application is setting up a work folder with demo data files.
+   - depending on your display, the font size may not suit your needs.  If so, go to `Help -> Change Font Size` (or press `Ctrl-Y`) to open a font selection dialog.
+
+.. image:: Figures/FontSizeDialog.png
+    :align: center
+    :alt: font size dialog
+    :width: 500px
+
+- the program will remember your font size and the last used window size.
+
+.. Features in detail
+.. ==========================

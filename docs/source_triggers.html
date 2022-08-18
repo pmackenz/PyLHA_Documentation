@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Triggering Module &mdash; PyLHA v0.99 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="author" title="About these documents" href="about.html" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="UI Module" href="source_UI.html" />
+    <link rel="prev" title="Analysis module" href="source_Analyzer.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="index.html" class="icon icon-home"> PyLHA
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">User Manual</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="about.html">About PyLHA</a></li>
+<li class="toctree-l1"><a class="reference internal" href="user_manual.html">Application Manual</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Technical Manual</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="technical_manual.html">Theory</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Source Docs</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="source_main_app.html">Main application</a></li>
+<li class="toctree-l1"><a class="reference internal" href="source_Analyzer.html">Analysis module</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Triggering Module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="source_UI.html">UI Module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="source_Graphics.html">Graphics Module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="source_LHA_driver.html">LHA_Driver Module</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">PyLHA</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>Triggering Module</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/source_triggers.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="triggering-module">
+<h1>Triggering Module<a class="headerlink" href="#triggering-module" title="Permalink to this heading"></a></h1>
+<dl class="py class">
+<dt class="sig sig-object py">
+<span class="target" id="class_analyzer_1_1triggering__models_1_1_boulanger___idriss__2012___s_p_t_1_1_b_i2012___s_p_t"></span><span class="sig-name descname"><span class="pre">Analyzer.triggering_models.Boulanger_Idriss_2012_SPT.BI2012_SPT</span> <span class="pre">:</span> <span class="pre">public</span> <span class="pre">object</span></span></dt>
+<dd><div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="init__">
+<span class="target" id="class_analyzer_1_1triggering__models_1_1_boulanger___idriss__2012___s_p_t_1_1_b_i2012___s_p_t_1a70ca0f7200faf072409a29d5ec812755"></span><span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">DS</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">PL_det</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">np.asarray([0.15])</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sigma_r</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">np.asarray([0.13])</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#init__" title="Permalink to this definition"></a></dt>
+<dd><p>Soil, Mw, and PGA input now combined as an xarray dataset. </p>
+<p><div class="highlight-default notranslate"><div class="highlight"><pre><span></span>   <span class="nd">@param</span> <span class="n">DS</span><span class="p">:</span>
+   <span class="nd">@param</span> <span class="n">PL_det</span><span class="p">:</span>
+   <span class="nd">@param</span> <span class="n">sigma_r</span><span class="p">:</span>
+</pre></div>
+</div>
+ </p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="calc_N160cs">
+<span class="target" id="class_analyzer_1_1triggering__models_1_1_boulanger___idriss__2012___s_p_t_1_1_b_i2012___s_p_t_1a613197dd31c28c2d9cd532429e710ae8"></span><span class="sig-name descname"><span class="pre">calc_N160cs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#calc_N160cs" title="Permalink to this definition"></a></dt>
+<dd><p>Clean Sand Correction for N160 (Equation 2.23 of CGM 2014 Report) </p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="calc_MSF_BI12SPT">
+<span class="target" id="class_analyzer_1_1triggering__models_1_1_boulanger___idriss__2012___s_p_t_1_1_b_i2012___s_p_t_1a18a2e97c74cf84d24dc48ebe18c18c26"></span><span class="sig-name descname"><span class="pre">calc_MSF_BI12SPT</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#calc_MSF_BI12SPT" title="Permalink to this definition"></a></dt>
+<dd><p>Calculate Magnitude Scaling Factor. </p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="calc_rd_BI12SPT">
+<span class="target" id="class_analyzer_1_1triggering__models_1_1_boulanger___idriss__2012___s_p_t_1_1_b_i2012___s_p_t_1a736b1475ad7fb248016d218ef8027f7f"></span><span class="sig-name descname"><span class="pre">calc_rd_BI12SPT</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#calc_rd_BI12SPT" title="Permalink to this definition"></a></dt>
+<dd><p>Calculate depth reduction factor, r_d. </p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="calc_Ksigma">
+<span class="target" id="class_analyzer_1_1triggering__models_1_1_boulanger___idriss__2012___s_p_t_1_1_b_i2012___s_p_t_1a084d20515bcf77f72b9890a1829c9845"></span><span class="sig-name descname"><span class="pre">calc_Ksigma</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#calc_Ksigma" title="Permalink to this definition"></a></dt>
+<dd><p>Overburden correction - K_sigma. </p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="calc_CSRref">
+<span class="target" id="class_analyzer_1_1triggering__models_1_1_boulanger___idriss__2012___s_p_t_1_1_b_i2012___s_p_t_1a55768eb30741bb977429e6725cc32d15"></span><span class="sig-name descname"><span class="pre">calc_CSRref</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#calc_CSRref" title="Permalink to this definition"></a></dt>
+<dd><p>Calculate CSR for M=7.5, sigvp=1atm. </p>
+<p>CSR_7.5,1atm = 0.65*amax*(sigv/sigvp)*r_d*1/MSF*1/K_sigma Used for both Deterministic FS and Probabilistic calculations </p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="calc_CRR">
+<span class="target" id="class_analyzer_1_1triggering__models_1_1_boulanger___idriss__2012___s_p_t_1_1_b_i2012___s_p_t_1ac472daa993b5ef219921ba2310e86efe"></span><span class="sig-name descname"><span class="pre">calc_CRR</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#calc_CRR" title="Permalink to this definition"></a></dt>
+<dd><p>Calculate Deterministic CRR - Using Eq. </p>
+<p>2.25 in CGM Report (2014)</p>
+<p>Calculates Cyclic Resistance Ratios for:</p>
+<p>(1) Deterministic factor of safety calculation (using a fitting parameter of 2.8 [Idriss and Boulanger, 2008])</p>
+<p>(2) Probabilistic FoS calculation (using fitting parameter of 2.67 [Boulanger and Idriss, 2012]) </p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="calcFSdet_single">
+<span class="target" id="class_analyzer_1_1triggering__models_1_1_boulanger___idriss__2012___s_p_t_1_1_b_i2012___s_p_t_1a5adc961701303dfa12dbb84faa4acfea"></span><span class="sig-name descname"><span class="pre">calcFSdet_single</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">amax</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Mw</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#calcFSdet_single" title="Permalink to this definition"></a></dt>
+<dd><p>Single scenario FSL calculation - returns a value. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>self</strong> – </p></li>
+<li><p><strong>amax</strong> – </p></li>
+<li><p><strong>Mw</strong> – </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>: FSLss </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="calc_FSdet">
+<span class="target" id="class_analyzer_1_1triggering__models_1_1_boulanger___idriss__2012___s_p_t_1_1_b_i2012___s_p_t_1a7a64d7f34b2ab62e93b9674b480dd277"></span><span class="sig-name descname"><span class="pre">calc_FSdet</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#calc_FSdet" title="Permalink to this definition"></a></dt>
+<dd><p>Deterministic Factor of Safety Calculation. </p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="calc_prob_liq">
+<span class="target" id="class_analyzer_1_1triggering__models_1_1_boulanger___idriss__2012___s_p_t_1_1_b_i2012___s_p_t_1a2621cb91ed6d0f07b4a26755ec7bb504"></span><span class="sig-name descname"><span class="pre">calc_prob_liq</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#calc_prob_liq" title="Permalink to this definition"></a></dt>
+<dd><p>Calculating Probability of Liquefaction, <span class="math notranslate nohighlight">\(P[FS_L&lt;1]\)</span>. </p>
+<p>Model Coefficients for CRR (assuming standard deviation of 0.13) Nearly identical to deterministic CRR coefficients, with a slightly lower fitting parameter (2.67, instead of 2.80) </p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="calc_prob_FS">
+<span class="target" id="class_analyzer_1_1triggering__models_1_1_boulanger___idriss__2012___s_p_t_1_1_b_i2012___s_p_t_1a916274b8a336637c84553ca8a941cbec"></span><span class="sig-name descname"><span class="pre">calc_prob_FS</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#calc_prob_FS" title="Permalink to this definition"></a></dt>
+<dd><p>Calculating Probability of non-exceedance of a given <span class="math notranslate nohighlight">\(FS_L\)</span> (equivalent to P_liq if user-defined FS_L is 1) and corresponding probability density. </p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="calc_detFS_PL">
+<span class="target" id="class_analyzer_1_1triggering__models_1_1_boulanger___idriss__2012___s_p_t_1_1_b_i2012___s_p_t_1a879e678db41d89f7948c4fcd23771ecd"></span><span class="sig-name descname"><span class="pre">calc_detFS_PL</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#calc_detFS_PL" title="Permalink to this definition"></a></dt>
+<dd><p>Calculates deterministic <span class="math notranslate nohighlight">\(FS_{liq}\)</span> for a given <span class="math notranslate nohighlight">\(P_L\)</span> (default set at 15%) </p>
+<p><ul class="simple">
+<li><p>CRR from Eq. 30 in Boulanger and Idriss (2012)</p></li>
+<li><p>CRR is reference (M=7.5, 1 atm) </p></li>
+</ul>
+</p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py">
+<span class="target" id="class_analyzer_1_1triggering__models_1_1_boulanger___idriss__2015___c_p_t_1_1_b_i2015___c_p_t"></span><span class="sig-name descname"><span class="pre">Analyzer.triggering_models.Boulanger_Idriss_2015_CPT.BI2015_CPT</span> <span class="pre">:</span> <span class="pre">public</span> <span class="pre">object</span></span></dt>
+<dd><div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="id0">
+<span class="target" id="class_analyzer_1_1triggering__models_1_1_boulanger___idriss__2015___c_p_t_1_1_b_i2015___c_p_t_1a906d6731fc2539fe7482755294b2daf1"></span><span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">DS</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">PL_det</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">np.asarray([0.15])</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">uncertainty</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'TOTAL'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#id0" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>DS</strong> – </p></li>
+<li><p><strong>PL_det</strong> – </p></li>
+<li><p><strong>uncertainty</strong> – </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="calc_MSF_BI15CPT">
+<span class="target" id="class_analyzer_1_1triggering__models_1_1_boulanger___idriss__2015___c_p_t_1_1_b_i2015___c_p_t_1a0563a4e1c0c7e5d411d7846e2ce2e3b8"></span><span class="sig-name descname"><span class="pre">calc_MSF_BI15CPT</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#calc_MSF_BI15CPT" title="Permalink to this definition"></a></dt>
+<dd><p>Calculate Magnitude Scaling Factor. </p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="calc_rd_BI15">
+<span class="target" id="class_analyzer_1_1triggering__models_1_1_boulanger___idriss__2015___c_p_t_1_1_b_i2015___c_p_t_1a9f703f573bf523d092d57faaab31ff31"></span><span class="sig-name descname"><span class="pre">calc_rd_BI15</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#calc_rd_BI15" title="Permalink to this definition"></a></dt>
+<dd><p>Calculate depth reduction factor, <span class="math notranslate nohighlight">\(r_d\)</span>. </p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="id1">
+<span class="target" id="class_analyzer_1_1triggering__models_1_1_boulanger___idriss__2015___c_p_t_1_1_b_i2015___c_p_t_1a084d20515bcf77f72b9890a1829c9845"></span><span class="sig-name descname"><span class="pre">calc_Ksigma</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#id1" title="Permalink to this definition"></a></dt>
+<dd><p>Overburden correction - K_sigma. </p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="id2">
+<span class="target" id="class_analyzer_1_1triggering__models_1_1_boulanger___idriss__2015___c_p_t_1_1_b_i2015___c_p_t_1ac472daa993b5ef219921ba2310e86efe"></span><span class="sig-name descname"><span class="pre">calc_CRR</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#id2" title="Permalink to this definition"></a></dt>
+<dd><p>Calculate Deterministic CRR - Using Eq. </p>
+<p>2.24 in CGM Report (2014)</p>
+<p>Calculates Cyclic Resistance Ratios for:</p>
+<p>(1) Deterministic factor of safety calculation (using a fitting parameter of 2.8 [Idriss and Boulanger, 2008])</p>
+<p>(2) Probabilistic FoS calculation (using fitting parameter of 2.67 [Boulanger and Idriss, 2012]) </p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="id3">
+<span class="target" id="class_analyzer_1_1triggering__models_1_1_boulanger___idriss__2015___c_p_t_1_1_b_i2015___c_p_t_1a5adc961701303dfa12dbb84faa4acfea"></span><span class="sig-name descname"><span class="pre">calcFSdet_single</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">amax</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Mw</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#id3" title="Permalink to this definition"></a></dt>
+<dd><p>Single scenario FSL calculation - returns a value. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>self</strong> – </p></li>
+<li><p><strong>amax</strong> – </p></li>
+<li><p><strong>Mw</strong> – </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>: FSLss </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="id4">
+<span class="target" id="class_analyzer_1_1triggering__models_1_1_boulanger___idriss__2015___c_p_t_1_1_b_i2015___c_p_t_1a7a64d7f34b2ab62e93b9674b480dd277"></span><span class="sig-name descname"><span class="pre">calc_FSdet</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#id4" title="Permalink to this definition"></a></dt>
+<dd><p>Deterministic Factor of Safety Calculation. </p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="id5">
+<span class="target" id="class_analyzer_1_1triggering__models_1_1_boulanger___idriss__2015___c_p_t_1_1_b_i2015___c_p_t_1a2621cb91ed6d0f07b4a26755ec7bb504"></span><span class="sig-name descname"><span class="pre">calc_prob_liq</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#id5" title="Permalink to this definition"></a></dt>
+<dd><p>Calculating Probability of Liquefaction, P[FS_L&lt;1]. </p>
+<p>Model Coefficients for CRR (assuming standard deviation of 0.13) Nearly identical to deterministic CRR coefficients, with a slightly lower fitting parameter (2.60, instead of 2.80) </p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="id6">
+<span class="target" id="class_analyzer_1_1triggering__models_1_1_boulanger___idriss__2015___c_p_t_1_1_b_i2015___c_p_t_1a916274b8a336637c84553ca8a941cbec"></span><span class="sig-name descname"><span class="pre">calc_prob_FS</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#id6" title="Permalink to this definition"></a></dt>
+<dd><p>Calculating Probability of non-exceedance of a given <span class="math notranslate nohighlight">\(FS_L\)</span> (equivalent to <span class="math notranslate nohighlight">\(P_{liq}\)</span> if user-defined <span class="math notranslate nohighlight">\(FS_L\)</span> is 1) and corresponding probability density. </p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="id7">
+<span class="target" id="class_analyzer_1_1triggering__models_1_1_boulanger___idriss__2015___c_p_t_1_1_b_i2015___c_p_t_1a879e678db41d89f7948c4fcd23771ecd"></span><span class="sig-name descname"><span class="pre">calc_detFS_PL</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#id7" title="Permalink to this definition"></a></dt>
+<dd><p>Calculates deterministic FSliq for a given <span class="math notranslate nohighlight">\(P_L\)</span> (default set at 15%) </p>
+<p><ul class="simple">
+<li><p>CRR from Eq. 30 in Boulanger and Idriss (2012)</p></li>
+<li><p>CRR is reference (M=7.5, 1 atm) </p></li>
+</ul>
+</p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py">
+<span class="target" id="class_analyzer_1_1triggering__models_1_1_cetin__etal__2004_1_1_cetin_e_a__2004"></span><span class="sig-name descname"><span class="pre">Analyzer.triggering_models.Cetin_etal_2004.CetinEA_2004</span> <span class="pre">:</span> <span class="pre">public</span> <span class="pre">object</span></span></dt>
+<dd><div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="id8">
+<span class="target" id="class_analyzer_1_1triggering__models_1_1_cetin__etal__2004_1_1_cetin_e_a__2004_1ad92198de31ed57f26b91658b6744d553"></span><span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">DS</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">PL_det</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">np.asarray([0.15])</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sigma</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'Total'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#id8" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>DS</strong> – </p></li>
+<li><p><strong>PL_det</strong> – </p></li>
+<li><p><strong>sigma</strong> – </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="calc_CEA04rd">
+<span class="target" id="class_analyzer_1_1triggering__models_1_1_cetin__etal__2004_1_1_cetin_e_a__2004_1a9ce473203488f4ba96bef8344b8312f5"></span><span class="sig-name descname"><span class="pre">calc_CEA04rd</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#calc_CEA04rd" title="Permalink to this definition"></a></dt>
+<dd><p>Calculating depth reduction factor, <span class="math notranslate nohighlight">\(r_d\)</span>. </p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="calc_CSReq">
+<span class="target" id="class_analyzer_1_1triggering__models_1_1_cetin__etal__2004_1_1_cetin_e_a__2004_1a3f5cd9faa1e897a87a858f689e8b2b29"></span><span class="sig-name descname"><span class="pre">calc_CSReq</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#calc_CSReq" title="Permalink to this definition"></a></dt>
+<dd><p>Calculate CSReq - NOT adjusted for K_sigma or Magnitude. </p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="id9">
+<span class="target" id="class_analyzer_1_1triggering__models_1_1_cetin__etal__2004_1_1_cetin_e_a__2004_1a2621cb91ed6d0f07b4a26755ec7bb504"></span><span class="sig-name descname"><span class="pre">calc_prob_liq</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#id9" title="Permalink to this definition"></a></dt>
+<dd><p>Calculating Probability of Liquefaction, <span class="math notranslate nohighlight">\(P[FS_L&lt;1]\)</span>. </p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="calc_prob_FSL">
+<span class="target" id="class_analyzer_1_1triggering__models_1_1_cetin__etal__2004_1_1_cetin_e_a__2004_1a275d2837272a0004e8af6d6f4bfd64a7"></span><span class="sig-name descname"><span class="pre">calc_prob_FSL</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#calc_prob_FSL" title="Permalink to this definition"></a></dt>
+<dd><p>Calculating Probability of non-exceedance of a given <span class="math notranslate nohighlight">\(FS_L\)</span> (equivalent to <span class="math notranslate nohighlight">\(P_{liq}\)</span> if user-defined <span class="math notranslate nohighlight">\(FS_L\)</span> is 1) and corresponding probability density. </p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="calc_detFSL_CEA04">
+<span class="target" id="class_analyzer_1_1triggering__models_1_1_cetin__etal__2004_1_1_cetin_e_a__2004_1a243fbe2e3188bca01bf2c0d5c2e95e82"></span><span class="sig-name descname"><span class="pre">calc_detFSL_CEA04</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#calc_detFSL_CEA04" title="Permalink to this definition"></a></dt>
+<dd><p>Calculates deterministic <span class="math notranslate nohighlight">\(FS_{liq}\)</span> for a given <span class="math notranslate nohighlight">\(P_L\)</span> (default set at 15%) </p>
+<p><ul class="simple">
+<li><p>CRR from Eq. 20 in Cetin et al. (2002)</p></li>
+<li><p>CSReq adjusted for duration and overburden </p></li>
+</ul>
+</p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="source_Analyzer.html" class="btn btn-neutral float-left" title="Analysis module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="source_UI.html" class="btn btn-neutral float-right" title="UI Module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, Andrew, Steve, Peter.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

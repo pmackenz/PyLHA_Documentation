@@ -1,0 +1,99 @@
+
+UI Module
+================
+
+.. doxygenclass:: UI::UI_main::MyApp
+   :project: qPLHA
+   :members:
+
+
+.. doxygenclass:: UI::MainWidget::MainWidget
+   :project: qPLHA
+   :members:
+
+
+.. doxygenclass:: UI::WelcomeWidget::WelcomeWidget
+   :project: qPLHA
+   :members:
+
+
+.. doxygenclass:: UI::InfoWidget::InfoWidget
+   :project: qPLHA
+   :members:
+
+
+.. doxygenclass:: UI::SoilProfileWidget::SoilProfileWidget
+   :project: qPLHA
+   :members:
+
+
+.. doxygenclass:: UI::SeismicHazardWidget::SeismicHazardWidget
+   :project: qPLHA
+   :members:
+
+
+.. doxygenclass:: UI::SusceptibilityWidget::SusceptibilityWidget
+   :project: qPLHA
+   :members:
+
+
+.. doxygenclass:: UI::LiqTriggeringWidget::LiqTriggerWidget
+       :project: qPLHA
+       :members:
+
+
+.. doxygenclass:: UI::LiqTriggerMULTwidget::triggerMULTwidget
+   :project: qPLHA
+   :members:
+
+
+.. doxygenclass:: UI::LiqTriggerPLHAwidget::triggerPLHAwidget
+   :project: qPLHA
+   :members:
+
+
+.. doxygenclass:: UI::LiqTriggerSSwidget::triggerSSwidget
+   :project: qPLHA
+   :members:
+
+
+.. doxygenclass:: UI::MagnitudeWidget::MagnitudeWidget
+       :project: qPLHA
+       :members:
+
+
+Dialog classes
+-----------------
+
+.. doxygenclass:: UI::dialogabout::DialogAbout
+   :project: qPLHA
+   :members:
+
+
+Helper classes
+-----------------
+
+.. doxygenclass:: UI::UI_Status::UI_Status
+   :project: qPLHA
+   :members:
+
+
+.. doxygenclass:: UI::listwidget::ListWidget
+   :project: qPLHA
+   :members:
+
+
+.. doxygenclass:: UI::HazardParser::HazardParser
+   :project: qPLHA
+   :members:
+
+
+.. doxygenclass:: docsWidget::DocsWidget
+   :project: qPLHA
+   :members:
+
+.. doxygenclass:: UI::PLabel::PLabel
+       :project: qPLHA
+       :members:
+
+

@@ -1,0 +1,35 @@
+About PyLHA
+============
+
+History
+-------
+
+Steve started this way back when 
+
+Copyright
+---------
+
+whe hold all copyright.
+
+Authors
+-------
+
+* **Steve Kramer** 
+
+ |   Emeritus Professor
+ |   University of Washington, Seattle, WA
+ |   (kramer@uw.edu)
+ |   Project Management.  Technical advisor.
+
+* **Andrew Makdisi**
+
+ |  United States Geological Survey (USGS)
+ |  (amakdisi@usgs.gov)
+ |  Development and implementation of the CPT analysis.
+
+* **Peter Mackenzie-Helnwein**
+
+ |  Research Associate Professor
+ |  University of Washington, Seattle, WA
+ |  (pmackenz@uw.edu),
+ |  App design and UI implementation.

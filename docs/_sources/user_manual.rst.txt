@@ -1,0 +1,24 @@
+==========================
+Application Manual
+==========================
+
+Setup
+=====
+
+.. toctree::
+
+    gettingStarted
+
+Examples
+==========================
+
+The code is distributed with a set of two soil profiles (one SPT, one CPT profile) and
+four hazard specification data sets.  These were placed in your :code:`Users\\YOUR_USER\\Documents\\PyLHA` folder.
+**PyLHA** uses that location to store saved projects, load from previously saved projects, and store precomputed data.
+The following examples demonstrate basic features.
+
+.. toctree::
+
+    example1
+    example2
+    example3

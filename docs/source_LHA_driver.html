@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LHA_Driver Module &mdash; PyLHA v0.99 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="_static/doctools.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="author" title="About these documents" href="about.html" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Graphics Module" href="source_Graphics.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="index.html" class="icon icon-home"> PyLHA
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">User Manual</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="about.html">About PyLHA</a></li>
+<li class="toctree-l1"><a class="reference internal" href="user_manual.html">Application Manual</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Technical Manual</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="technical_manual.html">Theory</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Source Docs</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="source_main_app.html">Main application</a></li>
+<li class="toctree-l1"><a class="reference internal" href="source_Analyzer.html">Analysis module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="source_triggers.html">Triggering Module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="source_UI.html">UI Module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="source_Graphics.html">Graphics Module</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">LHA_Driver Module</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">PyLHA</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>LHA_Driver Module</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/source_LHA_driver.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="lha-driver-module">
+<h1>LHA_Driver Module<a class="headerlink" href="#lha-driver-module" title="Permalink to this heading"></a></h1>
+<dl class="py class">
+<dt class="sig sig-object py">
+<span class="target" id="class_l_h_a___driver_1_1_l_h_a___driver_1_1_l_h_a___driver"></span><span class="sig-name descname"><span class="pre">LHA_Driver.LHA_Driver.LHA_Driver</span> <span class="pre">:</span> <span class="pre">public</span> <span class="pre">QObject</span></span></dt>
+<dd><p>Driver for the GUI mode of the application. </p>
+<p><strong>Signals</strong></p>
+<p><table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Signal   </p></th>
+<th class="head"><p>argument(s)   </p></th>
+<th class="head"><p></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>refresh_request   </p></td>
+<td><p>none   </p></td>
+<td><p>emitted if new data was received from the analysis tool    </p></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td><p></p></td>
+<td><p>and shared with the UI module.    </p></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td><p></p></td>
+<td><p>Tells the UI to refresh plots.   </p></td>
+</tr>
+</tbody>
+</table>
+</p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="dataUpdated">
+<span class="target" id="class_l_h_a___driver_1_1_l_h_a___driver_1_1_l_h_a___driver_1a06850b0342b9e825968b23ad1e290c3a"></span><span class="sig-name descname"><span class="pre">dataUpdated</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">options</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dataUpdated" title="Permalink to this definition"></a></dt>
+<dd><p>slots to receive information from the analysis tool </p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="updateSoilProfile">
+<span class="target" id="class_l_h_a___driver_1_1_l_h_a___driver_1_1_l_h_a___driver_1ad9cc2bc52d43f7cdedee5635ab9c0ff9"></span><span class="sig-name descname"><span class="pre">updateSoilProfile</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">profile</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#updateSoilProfile" title="Permalink to this definition"></a></dt>
+<dd><p>slots to receive information from the UI </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>profile</strong> – </p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="errorState">
+<span class="target" id="class_l_h_a___driver_1_1_l_h_a___driver_1_1_l_h_a___driver_1ada746f171f3e23e1caa97b79dd23ec8f"></span><span class="sig-name descname"><span class="pre">errorState</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#errorState" title="Permalink to this definition"></a></dt>
+<dd><p>internal methods </p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="stage0_request">
+<span class="target" id="class_l_h_a___driver_1_1_l_h_a___driver_1_1_l_h_a___driver_1a286b22e52f4503f4f41d6a4844db2aff"></span><span class="sig-name descname"><span class="pre">stage0_request</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#stage0_request" title="Permalink to this definition"></a></dt>
+<dd><p>this one always succeeds </p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>True </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="stage1_request">
+<span class="target" id="class_l_h_a___driver_1_1_l_h_a___driver_1_1_l_h_a___driver_1af08af13bf52b8a4bf6fcd962fb52853e"></span><span class="sig-name descname"><span class="pre">stage1_request</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#stage1_request" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>True if requested stage has been reached, False otherwise </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="stage2_request">
+<span class="target" id="class_l_h_a___driver_1_1_l_h_a___driver_1_1_l_h_a___driver_1afb0cf674194cd947242166e69792e557"></span><span class="sig-name descname"><span class="pre">stage2_request</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#stage2_request" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>True if requested stage has been reached, False otherwise </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="stage3_request">
+<span class="target" id="class_l_h_a___driver_1_1_l_h_a___driver_1_1_l_h_a___driver_1aa399bb990e9b97582c79326defd16128"></span><span class="sig-name descname"><span class="pre">stage3_request</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#stage3_request" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>True if requested stage has been reached, False otherwise </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="stage4_request">
+<span class="target" id="class_l_h_a___driver_1_1_l_h_a___driver_1_1_l_h_a___driver_1a2cec28c7c42881141a684bb4a1e7c753"></span><span class="sig-name descname"><span class="pre">stage4_request</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#stage4_request" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>True if requested stage has been reached, False otherwise </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="stage5_request">
+<span class="target" id="class_l_h_a___driver_1_1_l_h_a___driver_1_1_l_h_a___driver_1a51d158ad785892759547c2a0db058155"></span><span class="sig-name descname"><span class="pre">stage5_request</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#stage5_request" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>True if requested stage has been reached, False otherwise </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="stage6_request">
+<span class="target" id="class_l_h_a___driver_1_1_l_h_a___driver_1_1_l_h_a___driver_1ae5273402dc114bff35446ea13efa5ed2"></span><span class="sig-name descname"><span class="pre">stage6_request</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#stage6_request" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>True if requested stage has been reached, False otherwise </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="checkStates">
+<span class="target" id="class_l_h_a___driver_1_1_l_h_a___driver_1_1_l_h_a___driver_1a78739148b52dc1e93645ac2dc32e71bf"></span><span class="sig-name descname"><span class="pre">checkStates</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stage</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#checkStates" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>required</strong> – list of required stages (as integers) </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="on_ui_stateRequest">
+<span class="target" id="class_l_h_a___driver_1_1_l_h_a___driver_1_1_l_h_a___driver_1ab46e8d02675345c1ec017945e412f633"></span><span class="sig-name descname"><span class="pre">on_ui_stateRequest</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">indx</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#on_ui_stateRequest" title="Permalink to this definition"></a></dt>
+<dd><p><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">This</span> <span class="n">method</span> <span class="ow">is</span> <span class="n">called</span> <span class="n">every</span> <span class="n">time</span> <span class="n">the</span> <span class="n">active</span> <span class="n">tab</span> <span class="n">changes</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">UI</span><span class="o">.</span>
+
+<span class="p">:</span><span class="n">param</span> <span class="n">indx</span><span class="p">:</span> <span class="n">the</span> <span class="n">index</span> <span class="n">of</span> <span class="n">the</span> <span class="n">selected</span> <span class="n">tab</span><span class="o">.</span>
+</pre></div>
+</div>
+ </p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="on_siteInfo_updated">
+<span class="target" id="class_l_h_a___driver_1_1_l_h_a___driver_1_1_l_h_a___driver_1a2e52ed97cc2009a3b94679918f5f9a3e"></span><span class="sig-name descname"><span class="pre">on_siteInfo_updated</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">siteInfo</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#on_siteInfo_updated" title="Permalink to this definition"></a></dt>
+<dd><p>slot: triggered by analysis tool when site information has been updated </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>siteInfo</strong> – Site information dictionary </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="on_soilData_updated">
+<span class="target" id="class_l_h_a___driver_1_1_l_h_a___driver_1_1_l_h_a___driver_1a92cbc219026b657902a4d6402ba7434d"></span><span class="sig-name descname"><span class="pre">on_soilData_updated</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">soilDataset</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#on_soilData_updated" title="Permalink to this definition"></a></dt>
+<dd><p>slot: triggered by analysis tool when a new soil profile file has been processed </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>soilDataset</strong> – The soil profile information in an <code class="docutils literal notranslate"><span class="pre">xarray.Dataset</span></code> </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="on_hazardData_updated">
+<span class="target" id="class_l_h_a___driver_1_1_l_h_a___driver_1_1_l_h_a___driver_1aaba75247a3943321a22bf0049098e446"></span><span class="sig-name descname"><span class="pre">on_hazardData_updated</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hazardDataset</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#on_hazardData_updated" title="Permalink to this definition"></a></dt>
+<dd><p>slot: triggered by analysis tool when new hazard information is available </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>hazardDataset</strong> – The hazard information in an <code class="docutils literal notranslate"><span class="pre">xarray.Dataset</span></code> </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="on_fslData_updated">
+<span class="target" id="class_l_h_a___driver_1_1_l_h_a___driver_1_1_l_h_a___driver_1a741aabfd17031b0198e32aeb9c9e16e0"></span><span class="sig-name descname"><span class="pre">on_fslData_updated</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fslDataset</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#on_fslData_updated" title="Permalink to this definition"></a></dt>
+<dd><p>slot: triggered by analysis tool when new hazard information is available </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>hazardDataset</strong> – The hazard information in an <code class="docutils literal notranslate"><span class="pre">xarray.Dataset</span></code> </p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-static-attributes">Public Static Attributes</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="refresh_request">
+<span class="target" id="class_l_h_a___driver_1_1_l_h_a___driver_1_1_l_h_a___driver_1aec3fb6320296321ce3d9df5f1937325a"></span><span class="sig-name descname"><span class="pre">refresh_request</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">pyqtSignal()</span></em><a class="headerlink" href="#refresh_request" title="Permalink to this definition"></a></dt>
+<dd><p>signals for the UI </p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py">
+<span class="target" id="class_l_h_a___driver_1_1_l_h_a___driver_1_1_data_key_error"></span><span class="sig-name descname"><span class="pre">LHA_Driver.LHA_Driver.DataKeyError</span> <span class="pre">:</span> <span class="pre">public</span> <span class="pre">Exception</span></span></dt>
+<dd><p>uncomment the next line to disable stage checking DEVELOP_MODE = 1 </p>
+<p>Exception class for Errors specific to the <a class="reference internal" href="#class_l_h_a___driver_1_1_l_h_a___driver_1_1_l_h_a___driver"><span class="std std-ref">LHA_Driver</span></a> module </p>
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="source_Graphics.html" class="btn btn-neutral float-left" title="Graphics Module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, Andrew, Steve, Peter.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,1011 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>UI Module &mdash; PyLHA v0.99 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="_static/doctools.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="author" title="About these documents" href="about.html" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Graphics Module" href="source_Graphics.html" />
+    <link rel="prev" title="Triggering Module" href="source_triggers.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="index.html" class="icon icon-home"> PyLHA
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">User Manual</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="about.html">About PyLHA</a></li>
+<li class="toctree-l1"><a class="reference internal" href="user_manual.html">Application Manual</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Technical Manual</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="technical_manual.html">Theory</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Source Docs</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="source_main_app.html">Main application</a></li>
+<li class="toctree-l1"><a class="reference internal" href="source_Analyzer.html">Analysis module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="source_triggers.html">Triggering Module</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">UI Module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#dialog-classes">Dialog classes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#helper-classes">Helper classes</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="source_Graphics.html">Graphics Module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="source_LHA_driver.html">LHA_Driver Module</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">PyLHA</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>UI Module</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/source_UI.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="ui-module">
+<h1>UI Module<a class="headerlink" href="#ui-module" title="Permalink to this heading"></a></h1>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>doxygenclass: Cannot find class “UI::UI_main::MyApp” in doxygen xml output for project “qPLHA” from directory: ../xml</p>
+</div>
+<dl class="py class">
+<dt class="sig sig-object py">
+<span class="target" id="class_u_i_1_1_main_widget_1_1_main_widget"></span><span class="sig-name descname"><span class="pre">UI.MainWidget.MainWidget</span> <span class="pre">:</span> <span class="pre">public</span> <span class="pre">QFrame</span> <span class="pre">,</span> <span class="pre">public</span> <span class="pre">UI_Status</span></span></dt>
+<dd><p>Application Main Window (without menus) </p>
+<p>This Widget is to be loaded as the CentralWidget of a QApplication </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="setData">
+<span class="target" id="class_u_i_1_1_main_widget_1_1_main_widget_1ad6ba7789b6fadfb886692984232915b7"></span><span class="sig-name descname"><span class="pre">setData</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#setData" title="Permalink to this definition"></a></dt>
+<dd><p>inform all graphics widgets of the available data pointer </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>data</strong> – pointer to an xarray </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="refreshPlots">
+<span class="target" id="class_u_i_1_1_main_widget_1_1_main_widget_1af887ac09a9fa4470496a6b6c418e28e6"></span><span class="sig-name descname"><span class="pre">refreshPlots</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#refreshPlots" title="Permalink to this definition"></a></dt>
+<dd><p>order all graphics widgets to refresh plots </p>
+<p>this is usually called after data has been updated </p>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-members">Public Members</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="max_stages">
+<span class="target" id="class_u_i_1_1_main_widget_1_1_main_widget_1ab1acdfc4b932ef48dd4adabcaa6be499"></span><span class="sig-name descname"><span class="pre">max_stages</span></span><a class="headerlink" href="#max_stages" title="Permalink to this definition"></a></dt>
+<dd><p>treeView.setEditTriggers(QTreeView.EditTrigger.NoEditTriggers) # Disable Edit </p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py">
+<span class="target" id="class_u_i_1_1_welcome_widget_1_1_welcome_widget"></span><span class="sig-name descname"><span class="pre">UI.WelcomeWidget.WelcomeWidget</span> <span class="pre">:</span> <span class="pre">public</span> <span class="pre">QFrame</span></span></dt>
+<dd><p>A simple widget designed to display general information. </p>
+<p>That information needs to be provided as a standard HTML document and all included images (.PNG) </p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py">
+<span class="target" id="class_u_i_1_1_info_widget_1_1_info_widget"></span><span class="sig-name descname"><span class="pre">UI.InfoWidget.InfoWidget</span> <span class="pre">:</span> <span class="pre">public</span> <span class="pre">QFrame</span> <span class="pre">,</span> <span class="pre">public</span> <span class="pre">UI_Status</span></span></dt>
+<dd><div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="id0">
+<span class="target" id="class_u_i_1_1_info_widget_1_1_info_widget_1abddbb9f72d4f6a0cb2dc2af1879c8a14"></span><span class="sig-name descname"><span class="pre">setData</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#id0" title="Permalink to this definition"></a></dt>
+<dd><p>This acts as virtual method and shall be overloaded by every class using Graphics object(s) </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>data</strong> – </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="collectStatus">
+<span class="target" id="class_u_i_1_1_info_widget_1_1_info_widget_1a433f43c0e03aa3b042c5f06b6d640c0d"></span><span class="sig-name descname"><span class="pre">collectStatus</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#collectStatus" title="Permalink to this definition"></a></dt>
+<dd><p>add widget status info to data dictionary </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>data</strong> – </p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>: True|False, depending on success: error (False) or no issues (True) </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="updateStatus">
+<span class="target" id="class_u_i_1_1_info_widget_1_1_info_widget_1ac584fbbadd8daa044d274920cf6bf889"></span><span class="sig-name descname"><span class="pre">updateStatus</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#updateStatus" title="Permalink to this definition"></a></dt>
+<dd><p>update the widget status according to info given in the data dictionary </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>data</strong> – </p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>: True|False, depending on success: error (False) or no issues (True) </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="writeReport">
+<span class="target" id="class_u_i_1_1_info_widget_1_1_info_widget_1a1ea5407edc830a271bba575232f6d943"></span><span class="sig-name descname"><span class="pre">writeReport</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">document</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">options</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#writeReport" title="Permalink to this definition"></a></dt>
+<dd><p>Add documentation about yourself to the provided QTextDocument. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>document</strong> – pointer to a QTextDocument </p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>: status = True if successful, False otherwise </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="captureImage">
+<span class="target" id="class_u_i_1_1_info_widget_1_1_info_widget_1a031b01e20fda123821c7c99b9159b67e"></span><span class="sig-name descname"><span class="pre">captureImage</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#captureImage" title="Permalink to this definition"></a></dt>
+<dd><p>Render the map in the web viw as image. </p>
+<p>:return: the captured image</p>
+<p><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">from</span><span class="p">:</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">forum</span><span class="o">.</span><span class="n">qt</span><span class="o">.</span><span class="n">io</span><span class="o">/</span><span class="n">topic</span><span class="o">/</span><span class="mi">86433</span><span class="o">/</span><span class="n">how</span><span class="o">-</span><span class="n">to</span><span class="o">-</span><span class="n">take</span><span class="o">-</span><span class="n">screen</span><span class="o">-</span><span class="n">captures</span><span class="o">/</span><span class="mi">4</span>
+
+<span class="n">QSize</span> <span class="n">size</span><span class="p">(</span><span class="mi">1024</span><span class="p">,</span> <span class="mi">800</span><span class="p">);</span>
+<span class="n">view</span><span class="o">.</span><span class="n">resize</span><span class="p">(</span><span class="n">size</span><span class="p">);</span>
+<span class="n">QImage</span> <span class="n">image</span><span class="p">(</span><span class="n">size</span><span class="p">,</span> <span class="n">QImage</span><span class="p">::</span><span class="n">Format_ARGB32</span><span class="p">);</span>
+<span class="n">QPainter</span> <span class="n">painter</span><span class="p">(</span> <span class="o">&amp;</span> <span class="n">image</span><span class="p">);</span>
+<span class="n">view</span><span class="o">-&gt;</span><span class="n">render</span><span class="p">(</span> <span class="o">&amp;</span> <span class="n">painter</span><span class="p">);</span> <span class="o">//</span> <span class="n">render</span> <span class="n">the</span> <span class="n">webEngineView</span>
+<span class="n">painter</span><span class="o">.</span><span class="n">end</span><span class="p">();</span>
+</pre></div>
+</div>
+ </p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="finished">
+<span class="target" id="class_u_i_1_1_info_widget_1_1_info_widget_1a49e1674bb1b4b2d74c7f51e3f578853f"></span><span class="sig-name descname"><span class="pre">finished</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">wait_ms</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#finished" title="Permalink to this definition"></a></dt>
+<dd><p>Callback function to capture contents of the QWebEngineView with sufficient time to spare. </p>
+<p><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">based</span> <span class="n">on</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">gist</span><span class="o">.</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">sakurai</span><span class="o">-</span><span class="n">youhei</span><span class="o">/</span><span class="n">bed234779a407e37e1a6f83eba5909ce</span>
+</pre></div>
+</div>
+ </p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py">
+<span class="target" id="class_u_i_1_1_soil_profile_widget_1_1_soil_profile_widget"></span><span class="sig-name descname"><span class="pre">UI.SoilProfileWidget.SoilProfileWidget</span> <span class="pre">:</span> <span class="pre">public</span> <span class="pre">QFrame</span> <span class="pre">,</span> <span class="pre">public</span> <span class="pre">UI_Status</span></span></dt>
+<dd><div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="id1">
+<span class="target" id="class_u_i_1_1_soil_profile_widget_1_1_soil_profile_widget_1a433f43c0e03aa3b042c5f06b6d640c0d"></span><span class="sig-name descname"><span class="pre">collectStatus</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#id1" title="Permalink to this definition"></a></dt>
+<dd><p>add widget status info to data dictionary </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>data</strong> – </p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>: True|False, depending on success: error (False) or no issues (True) </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="id2">
+<span class="target" id="class_u_i_1_1_soil_profile_widget_1_1_soil_profile_widget_1ac584fbbadd8daa044d274920cf6bf889"></span><span class="sig-name descname"><span class="pre">updateStatus</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#id2" title="Permalink to this definition"></a></dt>
+<dd><p>update the widget status according to info given in the data dictionary </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>data</strong> – </p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>: True|False, depending on success: error (False) or no issues (True) </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="id3">
+<span class="target" id="class_u_i_1_1_soil_profile_widget_1_1_soil_profile_widget_1a20be356299ece301324310505ce68c80"></span><span class="sig-name descname"><span class="pre">setData</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">app_data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#id3" title="Permalink to this definition"></a></dt>
+<dd><p>This acts as virtual method and shall be overloaded by every class using Graphics object(s) </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>data</strong> – </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="id4">
+<span class="target" id="class_u_i_1_1_soil_profile_widget_1_1_soil_profile_widget_1af887ac09a9fa4470496a6b6c418e28e6"></span><span class="sig-name descname"><span class="pre">refreshPlots</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#id4" title="Permalink to this definition"></a></dt>
+<dd><p>This acts as virtual method and shall be overloaded by every class using Graphics object(s) </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>data</strong> – </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="id5">
+<span class="target" id="class_u_i_1_1_soil_profile_widget_1_1_soil_profile_widget_1a1ea5407edc830a271bba575232f6d943"></span><span class="sig-name descname"><span class="pre">writeReport</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">document</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">options</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#id5" title="Permalink to this definition"></a></dt>
+<dd><p>Add documentation about yourself to the provided QTextDocument. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>document</strong> – pointer to a QTextDocument </p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>: status = True if successful, False otherwise </p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py">
+<span class="target" id="class_u_i_1_1_seismic_hazard_widget_1_1_seismic_hazard_widget"></span><span class="sig-name descname"><span class="pre">UI.SeismicHazardWidget.SeismicHazardWidget</span> <span class="pre">:</span> <span class="pre">public</span> <span class="pre">QFrame</span> <span class="pre">,</span> <span class="pre">public</span> <span class="pre">UI_Status</span></span></dt>
+<dd><p>Defining our SoilProfileWidget class, which is based upon QFrame. </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="id6">
+<span class="target" id="class_u_i_1_1_seismic_hazard_widget_1_1_seismic_hazard_widget_1ad6ba7789b6fadfb886692984232915b7"></span><span class="sig-name descname"><span class="pre">setData</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#id6" title="Permalink to this definition"></a></dt>
+<dd><p>This acts as virtual method and shall be overloaded by every class using Graphics object(s) </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>data</strong> – </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="id7">
+<span class="target" id="class_u_i_1_1_seismic_hazard_widget_1_1_seismic_hazard_widget_1af887ac09a9fa4470496a6b6c418e28e6"></span><span class="sig-name descname"><span class="pre">refreshPlots</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#id7" title="Permalink to this definition"></a></dt>
+<dd><p>This acts as virtual method and shall be overloaded by every class using Graphics object(s) </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>data</strong> – </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="id8">
+<span class="target" id="class_u_i_1_1_seismic_hazard_widget_1_1_seismic_hazard_widget_1a1ea5407edc830a271bba575232f6d943"></span><span class="sig-name descname"><span class="pre">writeReport</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">document</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">options</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#id8" title="Permalink to this definition"></a></dt>
+<dd><p>Add documentation about yourself to the provided QTextDocument. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>document</strong> – pointer to a QTextDocument </p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>: status = True if successful, False otherwise </p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py">
+<span class="target" id="class_u_i_1_1_susceptibility_widget_1_1_susceptibility_widget"></span><span class="sig-name descname"><span class="pre">UI.SusceptibilityWidget.SusceptibilityWidget</span> <span class="pre">:</span> <span class="pre">public</span> <span class="pre">QFrame</span> <span class="pre">,</span> <span class="pre">public</span> <span class="pre">UI_Status</span></span></dt>
+<dd><div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="id9">
+<span class="target" id="class_u_i_1_1_susceptibility_widget_1_1_susceptibility_widget_1abddbb9f72d4f6a0cb2dc2af1879c8a14"></span><span class="sig-name descname"><span class="pre">setData</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#id9" title="Permalink to this definition"></a></dt>
+<dd><p>This acts as virtual method and shall be overloaded by every class using Graphics object(s) </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>data</strong> – </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="id10">
+<span class="target" id="class_u_i_1_1_susceptibility_widget_1_1_susceptibility_widget_1a433f43c0e03aa3b042c5f06b6d640c0d"></span><span class="sig-name descname"><span class="pre">collectStatus</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#id10" title="Permalink to this definition"></a></dt>
+<dd><p>add widget status info to data dictionary </p>
+<p>This method needs to be implemented by each widget !!!</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>data</strong> – </p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>: True|False, depending on success: error (False) or no issues (True) </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="id11">
+<span class="target" id="class_u_i_1_1_susceptibility_widget_1_1_susceptibility_widget_1ac584fbbadd8daa044d274920cf6bf889"></span><span class="sig-name descname"><span class="pre">updateStatus</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#id11" title="Permalink to this definition"></a></dt>
+<dd><p>update the widget status according to info given in the data dictionary </p>
+<p>This method needs to be implemented by each widget !!!</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>data</strong> – </p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>: True|False, depending on success: error (False) or no issues (True) </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="updateSusceptibility">
+<span class="target" id="class_u_i_1_1_susceptibility_widget_1_1_susceptibility_widget_1afe5ba5e0f3568b099920579a6c76574e"></span><span class="sig-name descname"><span class="pre">updateSusceptibility</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#updateSusceptibility" title="Permalink to this definition"></a></dt>
+<dd><p>Update parameters, rerun the susceptibility computation, and refresh the results table. </p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="id12">
+<span class="target" id="class_u_i_1_1_susceptibility_widget_1_1_susceptibility_widget_1a1ea5407edc830a271bba575232f6d943"></span><span class="sig-name descname"><span class="pre">writeReport</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">document</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">options</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#id12" title="Permalink to this definition"></a></dt>
+<dd><p>Add documentation about yourself to the provided QTextDocument. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>document</strong> – pointer to a QTextDocument </p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>: status = True if successful, False otherwise </p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py">
+<span class="target" id="class_u_i_1_1_liq_triggering_widget_1_1_liq_trigger_widget"></span><span class="sig-name descname"><span class="pre">UI.LiqTriggeringWidget.LiqTriggerWidget</span> <span class="pre">:</span> <span class="pre">public</span> <span class="pre">QFrame</span> <span class="pre">,</span> <span class="pre">public</span> <span class="pre">UI_Status</span></span></dt>
+<dd><div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="id13">
+<span class="target" id="class_u_i_1_1_liq_triggering_widget_1_1_liq_trigger_widget_1ad6ba7789b6fadfb886692984232915b7"></span><span class="sig-name descname"><span class="pre">setData</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#id13" title="Permalink to this definition"></a></dt>
+<dd><p>This acts as virtual method and shall be overloaded by every class using Graphics object(s) </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>data</strong> – </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="id14">
+<span class="target" id="class_u_i_1_1_liq_triggering_widget_1_1_liq_trigger_widget_1af887ac09a9fa4470496a6b6c418e28e6"></span><span class="sig-name descname"><span class="pre">refreshPlots</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#id14" title="Permalink to this definition"></a></dt>
+<dd><p>This acts as virtual method and shall be overloaded by every class using Graphics object(s) </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>data</strong> – </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="id15">
+<span class="target" id="class_u_i_1_1_liq_triggering_widget_1_1_liq_trigger_widget_1a433f43c0e03aa3b042c5f06b6d640c0d"></span><span class="sig-name descname"><span class="pre">collectStatus</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#id15" title="Permalink to this definition"></a></dt>
+<dd><p><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">add</span> <span class="n">widget</span> <span class="n">status</span> <span class="n">info</span> <span class="n">to</span> <span class="n">data</span> <span class="n">dictionary</span>
+
+<span class="nd">@param</span> <span class="n">data</span><span class="p">:</span>
+<span class="nd">@return</span><span class="p">:</span> <span class="kc">True</span><span class="o">|</span><span class="kc">False</span><span class="p">,</span> <span class="n">depending</span> <span class="n">on</span> <span class="n">success</span><span class="p">:</span> <span class="n">error</span> <span class="p">(</span><span class="kc">False</span><span class="p">)</span> <span class="ow">or</span> <span class="n">no</span> <span class="n">issues</span> <span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+ </p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="id16">
+<span class="target" id="class_u_i_1_1_liq_triggering_widget_1_1_liq_trigger_widget_1ac584fbbadd8daa044d274920cf6bf889"></span><span class="sig-name descname"><span class="pre">updateStatus</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#id16" title="Permalink to this definition"></a></dt>
+<dd><p><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">update</span> <span class="n">the</span> <span class="n">widget</span> <span class="n">status</span> <span class="n">according</span> <span class="n">to</span> <span class="n">info</span> <span class="n">given</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">data</span> <span class="n">dictionary</span>
+
+<span class="nd">@param</span> <span class="n">data</span><span class="p">:</span>
+<span class="nd">@return</span><span class="p">:</span> <span class="kc">True</span><span class="o">|</span><span class="kc">False</span><span class="p">,</span> <span class="n">depending</span> <span class="n">on</span> <span class="n">success</span><span class="p">:</span> <span class="n">error</span> <span class="p">(</span><span class="kc">False</span><span class="p">)</span> <span class="ow">or</span> <span class="n">no</span> <span class="n">issues</span> <span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+ </p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="id17">
+<span class="target" id="class_u_i_1_1_liq_triggering_widget_1_1_liq_trigger_widget_1a1ea5407edc830a271bba575232f6d943"></span><span class="sig-name descname"><span class="pre">writeReport</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">document</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">options</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#id17" title="Permalink to this definition"></a></dt>
+<dd><p>Add documentation about yourself to the provided QTextDocument. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>document</strong> – pointer to a QTextDocument </p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>: status = True if successful, False otherwise </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="writeReportByIndex">
+<span class="target" id="class_u_i_1_1_liq_triggering_widget_1_1_liq_trigger_widget_1af47092bbfa140bc033a3af97493137e8"></span><span class="sig-name descname"><span class="pre">writeReportByIndex</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">idx</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">document</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">options</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#writeReportByIndex" title="Permalink to this definition"></a></dt>
+<dd><p>Add documentation about yourself to the provided QTextDocument. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>document</strong> – pointer to a QTextDocument </p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>: status = True if successful, False otherwise </p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py">
+<span class="target" id="class_u_i_1_1_liq_trigger_m_u_l_twidget_1_1trigger_m_u_l_twidget"></span><span class="sig-name descname"><span class="pre">UI.LiqTriggerMULTwidget.triggerMULTwidget</span> <span class="pre">:</span> <span class="pre">public</span> <span class="pre">QFrame</span> <span class="pre">,</span> <span class="pre">public</span> <span class="pre">UI_Status</span></span></dt>
+<dd><div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="id18">
+<span class="target" id="class_u_i_1_1_liq_trigger_m_u_l_twidget_1_1trigger_m_u_l_twidget_1ad6ba7789b6fadfb886692984232915b7"></span><span class="sig-name descname"><span class="pre">setData</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#id18" title="Permalink to this definition"></a></dt>
+<dd><p>This acts as virtual method and shall be overloaded by every class using Graphics object(s) </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>data</strong> – </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="id19">
+<span class="target" id="class_u_i_1_1_liq_trigger_m_u_l_twidget_1_1trigger_m_u_l_twidget_1af887ac09a9fa4470496a6b6c418e28e6"></span><span class="sig-name descname"><span class="pre">refreshPlots</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#id19" title="Permalink to this definition"></a></dt>
+<dd><p>This acts as virtual method and shall be overloaded by every class using Graphics object(s) </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>data</strong> – </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="id20">
+<span class="target" id="class_u_i_1_1_liq_trigger_m_u_l_twidget_1_1trigger_m_u_l_twidget_1a433f43c0e03aa3b042c5f06b6d640c0d"></span><span class="sig-name descname"><span class="pre">collectStatus</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#id20" title="Permalink to this definition"></a></dt>
+<dd><p>add widget status info to data dictionary </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>data</strong> – </p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>: True|False, depending on success: error (False) or no issues (True) </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="id21">
+<span class="target" id="class_u_i_1_1_liq_trigger_m_u_l_twidget_1_1trigger_m_u_l_twidget_1ac584fbbadd8daa044d274920cf6bf889"></span><span class="sig-name descname"><span class="pre">updateStatus</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#id21" title="Permalink to this definition"></a></dt>
+<dd><p>update the widget status according to info given in the data dictionary </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>data</strong> – </p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>: True|False, depending on success: error (False) or no issues (True) </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="id22">
+<span class="target" id="class_u_i_1_1_liq_trigger_m_u_l_twidget_1_1trigger_m_u_l_twidget_1a1ea5407edc830a271bba575232f6d943"></span><span class="sig-name descname"><span class="pre">writeReport</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">document</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">options</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#id22" title="Permalink to this definition"></a></dt>
+<dd><p>Add documentation about yourself to the provided QTextDocument. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>document</strong> – pointer to a QTextDocument </p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>: status = True if successful, False otherwise </p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py">
+<span class="target" id="class_u_i_1_1_liq_trigger_p_l_h_awidget_1_1trigger_p_l_h_awidget"></span><span class="sig-name descname"><span class="pre">UI.LiqTriggerPLHAwidget.triggerPLHAwidget</span> <span class="pre">:</span> <span class="pre">public</span> <span class="pre">QFrame</span> <span class="pre">,</span> <span class="pre">public</span> <span class="pre">UI_Status</span></span></dt>
+<dd><div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="id23">
+<span class="target" id="class_u_i_1_1_liq_trigger_p_l_h_awidget_1_1trigger_p_l_h_awidget_1abddbb9f72d4f6a0cb2dc2af1879c8a14"></span><span class="sig-name descname"><span class="pre">setData</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#id23" title="Permalink to this definition"></a></dt>
+<dd><p>This acts as virtual method and shall be overloaded by every class using Graphics object(s) </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>data</strong> – </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="id24">
+<span class="target" id="class_u_i_1_1_liq_trigger_p_l_h_awidget_1_1trigger_p_l_h_awidget_1a433f43c0e03aa3b042c5f06b6d640c0d"></span><span class="sig-name descname"><span class="pre">collectStatus</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#id24" title="Permalink to this definition"></a></dt>
+<dd><p>add widget status info to data dictionary </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>data</strong> – </p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>: True|False, depending on success: error (False) or no issues (True) </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="id25">
+<span class="target" id="class_u_i_1_1_liq_trigger_p_l_h_awidget_1_1trigger_p_l_h_awidget_1ac584fbbadd8daa044d274920cf6bf889"></span><span class="sig-name descname"><span class="pre">updateStatus</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#id25" title="Permalink to this definition"></a></dt>
+<dd><p>update the widget status according to info given in the data dictionary </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>data</strong> – </p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>: True|False, depending on success: error (False) or no issues (True) </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="id26">
+<span class="target" id="class_u_i_1_1_liq_trigger_p_l_h_awidget_1_1trigger_p_l_h_awidget_1a1ea5407edc830a271bba575232f6d943"></span><span class="sig-name descname"><span class="pre">writeReport</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">document</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">options</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#id26" title="Permalink to this definition"></a></dt>
+<dd><p>Add documentation about yourself to the provided QTextDocument. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>document</strong> – pointer to a QTextDocument </p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>: status = True if successful, False otherwise </p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py">
+<span class="target" id="class_u_i_1_1_liq_trigger_s_swidget_1_1trigger_s_swidget"></span><span class="sig-name descname"><span class="pre">UI.LiqTriggerSSwidget.triggerSSwidget</span> <span class="pre">:</span> <span class="pre">public</span> <span class="pre">QFrame</span> <span class="pre">,</span> <span class="pre">public</span> <span class="pre">UI_Status</span></span></dt>
+<dd><div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="id27">
+<span class="target" id="class_u_i_1_1_liq_trigger_s_swidget_1_1trigger_s_swidget_1a433f43c0e03aa3b042c5f06b6d640c0d"></span><span class="sig-name descname"><span class="pre">collectStatus</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#id27" title="Permalink to this definition"></a></dt>
+<dd><p>add widget status info to data dictionary </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>data</strong> – </p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>: True|False, depending on success: error (False) or no issues (True) </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="id28">
+<span class="target" id="class_u_i_1_1_liq_trigger_s_swidget_1_1trigger_s_swidget_1abddbb9f72d4f6a0cb2dc2af1879c8a14"></span><span class="sig-name descname"><span class="pre">setData</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#id28" title="Permalink to this definition"></a></dt>
+<dd><p>This acts as virtual method and shall be overloaded by every class using Graphics object(s) </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>data</strong> – </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="id29">
+<span class="target" id="class_u_i_1_1_liq_trigger_s_swidget_1_1trigger_s_swidget_1ac584fbbadd8daa044d274920cf6bf889"></span><span class="sig-name descname"><span class="pre">updateStatus</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#id29" title="Permalink to this definition"></a></dt>
+<dd><p>update the widget status according to info given in the data dictionary </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>data</strong> – </p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>: True|False, depending on success: error (False) or no issues (True) </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="id30">
+<span class="target" id="class_u_i_1_1_liq_trigger_s_swidget_1_1trigger_s_swidget_1a1ea5407edc830a271bba575232f6d943"></span><span class="sig-name descname"><span class="pre">writeReport</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">document</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">options</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#id30" title="Permalink to this definition"></a></dt>
+<dd><p>Add documentation about yourself to the provided QTextDocument. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>document</strong> – pointer to a QTextDocument </p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>: status = True if successful, False otherwise </p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py">
+<span class="target" id="class_u_i_1_1_magnitude_widget_1_1_magnitude_widget"></span><span class="sig-name descname"><span class="pre">UI.MagnitudeWidget.MagnitudeWidget</span> <span class="pre">:</span> <span class="pre">public</span> <span class="pre">QDialog</span></span></dt>
+<dd></dd></dl>
+
+<section id="dialog-classes">
+<h2>Dialog classes<a class="headerlink" href="#dialog-classes" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py">
+<span class="target" id="class_u_i_1_1dialogabout_1_1_dialog_about"></span><span class="sig-name descname"><span class="pre">UI.dialogabout.DialogAbout</span> <span class="pre">:</span> <span class="pre">public</span> <span class="pre">QDialog</span></span></dt>
+<dd></dd></dl>
+
+</section>
+<section id="helper-classes">
+<h2>Helper classes<a class="headerlink" href="#helper-classes" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py">
+<span class="target" id="class_u_i_1_1_u_i___status_1_1_u_i___status"></span><span class="sig-name descname"><span class="pre">UI.UI_Status.UI_Status</span> <span class="pre">:</span> <span class="pre">public</span> <span class="pre">object</span></span></dt>
+<dd><p>Subclassed by <a class="reference internal" href="#class_u_i_1_1_info_widget_1_1_info_widget"><span class="std std-ref">InfoWidget</span></a>, <a class="reference internal" href="#class_u_i_1_1_liq_trigger_m_u_l_twidget_1_1trigger_m_u_l_twidget"><span class="std std-ref">triggerMULTwidget</span></a>, <a class="reference internal" href="#class_u_i_1_1_liq_trigger_p_l_h_awidget_1_1trigger_p_l_h_awidget"><span class="std std-ref">triggerPLHAwidget</span></a>, <a class="reference internal" href="#class_u_i_1_1_liq_trigger_s_swidget_1_1trigger_s_swidget"><span class="std std-ref">triggerSSwidget</span></a>, <a class="reference internal" href="#class_u_i_1_1_liq_triggering_widget_1_1_liq_trigger_widget"><span class="std std-ref">LiqTriggerWidget</span></a>, <a class="reference internal" href="#class_u_i_1_1_main_widget_1_1_main_widget"><span class="std std-ref">MainWidget</span></a>, PLHA_AppWidget, PPPselectionWidget, ReportWidget, <a class="reference internal" href="#class_u_i_1_1_seismic_hazard_widget_1_1_seismic_hazard_widget"><span class="std std-ref">SeismicHazardWidget</span></a>, <a class="reference internal" href="#class_u_i_1_1_soil_profile_widget_1_1_soil_profile_widget"><span class="std std-ref">SoilProfileWidget</span></a>, <a class="reference internal" href="#class_u_i_1_1_susceptibility_widget_1_1_susceptibility_widget"><span class="std std-ref">SusceptibilityWidget</span></a>, siteInfoWidget</p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="id31">
+<span class="target" id="class_u_i_1_1_u_i___status_1_1_u_i___status_1abddbb9f72d4f6a0cb2dc2af1879c8a14"></span><span class="sig-name descname"><span class="pre">setData</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#id31" title="Permalink to this definition"></a></dt>
+<dd><p>This acts as virtual method and shall be overloaded by every class using Graphics object(s) </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>data</strong> – </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="id32">
+<span class="target" id="class_u_i_1_1_u_i___status_1_1_u_i___status_1af887ac09a9fa4470496a6b6c418e28e6"></span><span class="sig-name descname"><span class="pre">refreshPlots</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#id32" title="Permalink to this definition"></a></dt>
+<dd><p>This acts as virtual method and shall be overloaded by every class using Graphics object(s) </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>data</strong> – </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="id33">
+<span class="target" id="class_u_i_1_1_u_i___status_1_1_u_i___status_1a433f43c0e03aa3b042c5f06b6d640c0d"></span><span class="sig-name descname"><span class="pre">collectStatus</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#id33" title="Permalink to this definition"></a></dt>
+<dd><p>add widget status info to data dictionary </p>
+<p>This method needs to be implemented by each widget !!!</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>data</strong> – </p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>: status = True|False, depending on success: error (False) or no issues (True) </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="id34">
+<span class="target" id="class_u_i_1_1_u_i___status_1_1_u_i___status_1ac584fbbadd8daa044d274920cf6bf889"></span><span class="sig-name descname"><span class="pre">updateStatus</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#id34" title="Permalink to this definition"></a></dt>
+<dd><p>update the widget status according to info given in the data dictionary </p>
+<p>This method needs to be implemented by each widget !!!</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>data</strong> – </p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>: status = True|False, depending on success: error (False) or no issues (True) </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="addClient">
+<span class="target" id="class_u_i_1_1_u_i___status_1_1_u_i___status_1af4db5532372542817619c896b47744de"></span><span class="sig-name descname"><span class="pre">addClient</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">widget</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">key</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#addClient" title="Permalink to this definition"></a></dt>
+<dd><p>register a widget with a UNIQUE key to become part of data save and load functionality </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>widget</strong> – </p></li>
+<li><p><strong>key</strong> – </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="saveToFile">
+<span class="target" id="class_u_i_1_1_u_i___status_1_1_u_i___status_1a63fb92c1759608433bdfde0addcc13a6"></span><span class="sig-name descname"><span class="pre">saveToFile</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filename</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#saveToFile" title="Permalink to this definition"></a></dt>
+<dd><p>needs to be implemented by the top level widget using <a class="reference internal" href="#class_u_i_1_1_u_i___status_1_1_u_i___status"><span class="std std-ref">UI_Status</span></a> </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>filename</strong> – </p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>: status = True if successful, False otherwise </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="loadFromFile">
+<span class="target" id="class_u_i_1_1_u_i___status_1_1_u_i___status_1ab73f20be925ad57108c76f654e796d77"></span><span class="sig-name descname"><span class="pre">loadFromFile</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filename</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#loadFromFile" title="Permalink to this definition"></a></dt>
+<dd><p>needs to be implemented by the top level widget using <a class="reference internal" href="#class_u_i_1_1_u_i___status_1_1_u_i___status"><span class="std std-ref">UI_Status</span></a> </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>filename</strong> – </p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>: status = True if successful, False otherwise </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="collectByLabel">
+<span class="target" id="class_u_i_1_1_u_i___status_1_1_u_i___status_1af8153bfb3fac9afe55b6694705cd3eaf"></span><span class="sig-name descname"><span class="pre">collectByLabel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value_keys</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">text_keys</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bool_keys</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">item_keys</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#collectByLabel" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data</strong> – </p></li>
+<li><p><strong>value_keys</strong> – </p></li>
+<li><p><strong>text_keys</strong> – </p></li>
+<li><p><strong>bool_keys</strong> – </p></li>
+<li><p><strong>item_keys</strong> – </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="setByLabel">
+<span class="target" id="class_u_i_1_1_u_i___status_1_1_u_i___status_1a82537ef142031933a50ed435e854a708"></span><span class="sig-name descname"><span class="pre">setByLabel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value_keys</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">text_keys</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bool_keys</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">item_keys</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#setByLabel" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data</strong> – </p></li>
+<li><p><strong>value_keys</strong> – </p></li>
+<li><p><strong>text_keys</strong> – </p></li>
+<li><p><strong>bool_keys</strong> – </p></li>
+<li><p><strong>item_keys</strong> – </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="id35">
+<span class="target" id="class_u_i_1_1_u_i___status_1_1_u_i___status_1a1ea5407edc830a271bba575232f6d943"></span><span class="sig-name descname"><span class="pre">writeReport</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">document</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">options</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#id35" title="Permalink to this definition"></a></dt>
+<dd><p>Add documentation about yourself to the provided QTextDocument. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>document</strong> – pointer to a QTextDocument </p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>: status = True if successful, False otherwise </p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py">
+<span class="target" id="class_u_i_1_1listwidget_1_1_list_widget"></span><span class="sig-name descname"><span class="pre">UI.listwidget.ListWidget</span> <span class="pre">:</span> <span class="pre">public</span> <span class="pre">QTableWidget</span></span></dt>
+<dd><p>class: <a class="reference internal" href="#class_u_i_1_1listwidget_1_1_list_widget"><span class="std std-ref">ListWidget</span></a> </p>
+<p>variables:</p>
+<p>methods: def <strong>init</strong>(self) def setData(self, lst) def setHeader(self, lst) def resizeEvent(self, e) </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="id36">
+<span class="target" id="class_u_i_1_1listwidget_1_1_list_widget_1a42100e5063c1e8db252eb7f83267e3b1"></span><span class="sig-name descname"><span class="pre">setData</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lst</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">keys</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[]</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cols</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#id36" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>lst</strong> – table contents given as <code class="docutils literal notranslate"><span class="pre">np.ndarray</span></code>, <code class="docutils literal notranslate"><span class="pre">list</span></code>, <code class="docutils literal notranslate"><span class="pre">tuple</span></code>, <code class="docutils literal notranslate"><span class="pre">pandas.Series</span></code>, or <code class="docutils literal notranslate"><span class="pre">xarray.Dataset</span></code> </p></li>
+<li><p><strong>keys</strong> – list of column labels to be extracted from a <code class="docutils literal notranslate"><span class="pre">xarray.Dataset</span></code> object </p></li>
+<li><p><strong>cols</strong> – </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="id37">
+<span class="target" id="class_u_i_1_1listwidget_1_1_list_widget_1a433f43c0e03aa3b042c5f06b6d640c0d"></span><span class="sig-name descname"><span class="pre">collectStatus</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#id37" title="Permalink to this definition"></a></dt>
+<dd><p>add widget status info to data dictionary </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>data</strong> – </p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>: status = True|False, depending on success: error (False) or no issues (True) </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="id38">
+<span class="target" id="class_u_i_1_1listwidget_1_1_list_widget_1ac584fbbadd8daa044d274920cf6bf889"></span><span class="sig-name descname"><span class="pre">updateStatus</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#id38" title="Permalink to this definition"></a></dt>
+<dd><p>update the widget status according to info given in the data dictionary </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>data</strong> – </p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>: status = True|False, depending on success: error (False) or no issues (True) </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="id39">
+<span class="target" id="class_u_i_1_1listwidget_1_1_list_widget_1a7c7fc3ef804167b9184df672bf6e6775"></span><span class="sig-name descname"><span class="pre">writeReport</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">document</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#id39" title="Permalink to this definition"></a></dt>
+<dd><p>Add documentation about yourself to the provided QTextDocument. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>cursor</strong> – cursor to a QTextDocument </p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>: status = True if successful, False otherwise </p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py">
+<span class="target" id="class_u_i_1_1_hazard_parser_1_1_hazard_parser"></span><span class="sig-name descname"><span class="pre">UI.HazardParser.HazardParser</span> <span class="pre">:</span> <span class="pre">public</span> <span class="pre">object</span></span></dt>
+<dd><p>Parses a folder for files containing Hazard Information and Data. </p>
+<p>Use this class to locate and extract human readable information from previously saved hazard information files.</p>
+<p>By default, any instance of this class searches in ‘Documents/PyLHA/ExistingHazardData’. A different search folder can be specified using <code class="docutils literal notranslate"><span class="pre">setPath(FULL_PATH_TO_FOLDER)</span></code> </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="setPath">
+<span class="target" id="class_u_i_1_1_hazard_parser_1_1_hazard_parser_1af011a22617865425be40f4ce43a21cd0"></span><span class="sig-name descname"><span class="pre">setPath</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">path</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#setPath" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>path</strong> – path to folder containing existing hazard data </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="parse">
+<span class="target" id="class_u_i_1_1_hazard_parser_1_1_hazard_parser_1aed1b33c03102a60d1b12f3ec96850149"></span><span class="sig-name descname"><span class="pre">parse</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#parse" title="Permalink to this definition"></a></dt>
+<dd><p>search default folder for existing hazard information files and parse them for human readable site information. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>: a list of site information dictionaries </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="getFileInfo">
+<span class="target" id="class_u_i_1_1_hazard_parser_1_1_hazard_parser_1ad41a024cf89bd44035136b035dd1807e"></span><span class="sig-name descname"><span class="pre">getFileInfo</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filename</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#getFileInfo" title="Permalink to this definition"></a></dt>
+<dd><p>Try to load the given file as <code class="docutils literal notranslate"><span class="pre">xarray.dataset</span></code> and extract (‘Site’, ‘Source’, ‘Longitude’, ‘Latitude’, ‘Vs30’, ‘usgsFile’), if present. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>filename</strong> – </p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>: dictionary containing site information </p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py">
+<span class="target" id="classdocs_widget_1_1_docs_widget"></span><span class="sig-name descname"><span class="pre">docsWidget.DocsWidget</span> <span class="pre">:</span> <span class="pre">public</span> <span class="pre">QFrame</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py">
+<span class="target" id="class_u_i_1_1_p_label_1_1_p_label"></span><span class="sig-name descname"><span class="pre">UI.PLabel.PLabel</span> <span class="pre">:</span> <span class="pre">public</span> <span class="pre">QLabel</span></span></dt>
+<dd></dd></dl>
+
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="source_triggers.html" class="btn btn-neutral float-left" title="Triggering Module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="source_Graphics.html" class="btn btn-neutral float-right" title="Graphics Module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, Andrew, Steve, Peter.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

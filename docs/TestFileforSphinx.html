@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Probabilistic Data for Peak Acceleration &mdash; PyLHA v0.99 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="author" title="About these documents" href="about.html" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Main application" href="source_main_app.html" />
+    <link rel="prev" title="Theory" href="technical_manual.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="index.html" class="icon icon-home"> PyLHA
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">User Manual</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="about.html">About PyLHA</a></li>
+<li class="toctree-l1"><a class="reference internal" href="user_manual.html">Application Manual</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Technical Manual</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="technical_manual.html">Theory</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Probabilistic Data for Peak Acceleration</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#generating-hazard-curves-for-a-max">Generating Hazard Curves for <span class="math notranslate nohighlight">\(a_{max}\)</span></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#deaggregating-a-max-hazard-by-magnitude">Deaggregating <span class="math notranslate nohighlight">\(a_{max}\)</span> Hazard by Magnitude</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#interpolation-of-magnitude-specific-a-max-hazard-curves">Interpolation of Magnitude-Specific <span class="math notranslate nohighlight">\(a_{max}\)</span> Hazard Curves</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#extrapolating-magnitude-specific-a-max-hazard-curves-beyond-20-000-year-return-period">Extrapolating Magnitude-Specific <span class="math notranslate nohighlight">\(a_{max}\)</span> Hazard Curves Beyond 20,000-year Return Period</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#maximum-acceleration-for-use-in-plha-calculations"><em>Maximum Acceleration for use in PLHA Calculations</em></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Source Docs</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="source_main_app.html">Main application</a></li>
+<li class="toctree-l1"><a class="reference internal" href="source_Analyzer.html">Analysis module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="source_triggers.html">Triggering Module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="source_UI.html">UI Module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="source_Graphics.html">Graphics Module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="source_LHA_driver.html">LHA_Driver Module</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">PyLHA</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="technical_manual.html">Theory</a> &raquo;</li>
+      <li>Probabilistic Data for Peak Acceleration</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/TestFileforSphinx.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="probabilistic-data-for-peak-acceleration">
+<span id="secgmdata"></span><h1>Probabilistic Data for Peak Acceleration<a class="headerlink" href="#probabilistic-data-for-peak-acceleration" title="Permalink to this heading"></a></h1>
+<p>The ground motion hazard curve data used in <code class="docutils literal notranslate"><span class="pre">PLHApy</span></code> are obtained from
+<code class="docutils literal notranslate"><span class="pre">nshmp-haz</span></code>, the Java-based platform created and maintained by the USGS
+National Seismic Hazard Mapping Project (<a class="reference external" href="https://github.com/usgs/nshmp-haz">https://github.com/usgs/nshmp-haz</a>). The
+<code class="docutils literal notranslate"><span class="pre">nshmp-haz</span></code> platform is capable of running multi-site PSHA calculations to generate
+hazard curves for spectral amplitude <em>IMs</em>, as well as perform deaggregation
+calculations to characterize the distribution of magnitudes, source-site distances,
+and epsilons that contribute to the  hazard at a particular rate of exceedance (<a class="reference internal" href="#baker2015" id="id1"><span>[Baker2015]</span></a>). It includes the full catalog of seismic source models and ground motion model (GMM) logic trees used by USGS in the development of their National Seismic Hazard Maps, and is used as the source code for the deaggregation calculations that can be performed on the USGS seismic hazard website.</p>
+<section id="generating-hazard-curves-for-a-max">
+<h2>Generating Hazard Curves for <span class="math notranslate nohighlight">\(a_{max}\)</span><a class="headerlink" href="#generating-hazard-curves-for-a-max" title="Permalink to this heading"></a></h2>
+<p>The primary functionality of the <code class="docutils literal notranslate"><span class="pre">nshmp-haz</span></code> platform is its <code class="docutils literal notranslate"><span class="pre">HazardCalc</span></code>
+module, which performs PSHA calculations to produce hazard curves for a variety of
+spectral amplitude-based intensity measures. A hazard curve is generated by calculating
+the mean annual rate of exceedance of a discrete set of values of a given ground motion
+<em>IM</em> using Equation (<span class="xref std std-ref">eq_PSHA</span>). Generally, the set of values is
+exponentially spaced, and selected to encompass the range of physically reasonable
+values of the <em>IM</em> of interest. A typical ground motion hazard curve, showing the
+variation in the annual rate of exceedance with respect to peak acceleration
+<span class="math notranslate nohighlight">\(a_{max}\)</span>, for a site in Seattle, Washington, is shown in
+<a class="reference internal" href="#fig-seahazcurve"><span class="std std-numref">Fig. 1</span></a>. In order to perform the PLHA calculation at regularly-spaced
+intervals of <span class="math notranslate nohighlight">\(a_{max}\)</span>, interpolation in <span class="math notranslate nohighlight">\(a_{max}\)</span>-<span class="math notranslate nohighlight">\(\log\lambda\)</span> space using cubic splines is required</p>
+<figure class="align-center" id="id7">
+<span id="fig-seahazcurve"></span><a class="reference internal image-reference" href="_images/SeattleHazCurve.png"><img alt="Seattle Hazard curve" src="_images/SeattleHazCurve.png" style="width: 500px;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 1 </span><span class="caption-text">Hazard curve for peak acceleration <span class="math notranslate nohighlight">\(a_{max}\)</span>, obtained using the 2014 National
+Seismic Hazard Map (NSHM14) for a site in Seattle, Washington (<span class="math notranslate nohighlight">\(V_{s30}=215\)</span> m/s)}</span><a class="headerlink" href="#id7" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+<section id="deaggregating-a-max-hazard-by-magnitude">
+<h2>Deaggregating <span class="math notranslate nohighlight">\(a_{max}\)</span> Hazard by Magnitude<a class="headerlink" href="#deaggregating-a-max-hazard-by-magnitude" title="Permalink to this heading"></a></h2>
+<p>Since the cyclic stress-based PLHA framework for estimating <span class="math notranslate nohighlight">\(FS_{L}\)</span> requires
+probabilistic information about magnitude in addition to <span class="math notranslate nohighlight">\(a_{max}\)</span>, the overall
+hazard curve shown in <a class="reference internal" href="#fig-seahazcurve"><span class="std std-numref">Fig. 1</span></a> is insufficient for use in Equation
+(<span class="xref std std-ref">eq_PLHA</span>). Thus, for the range of <span class="math notranslate nohighlight">\(a_{max}\)</span> values considered, the
+conditional distribution of <span class="math notranslate nohighlight">\(M_w\)</span> must be characterized through a process known
+as <em>deaggregation</em>. Deaggregating the hazard at a particular period consists of determining, given
+that a particular level of intensity measure has been exceeded, what the probability was that the
+contributing earthquake featured a particular magnitude, distance, or combination of both (Baker,
+2015). The <code class="docutils literal notranslate"><span class="pre">DeaggCalc</span></code> module in <code class="docutils literal notranslate"><span class="pre">nshmp-haz</span></code> calculates this probability for all combinations of magnitude and distance at a particular return period via:</p>
+<div class="math notranslate nohighlight" id="equation-testfileforsphinx-0">
+<span id="eq-deagmr"></span><span class="eqno">(1)<a class="headerlink" href="#equation-testfileforsphinx-0" title="Permalink to this equation"></a></span>\[P\left[M_w=m_i,R=r_j|IM&gt;im\right] = \frac{\lambda_{IM}(im|m_i,r_j)}{\lambda_{IM}(im)}\]</div>
+<p>The resulting output can be plotted as a three-dimensional histogram as shown in
+<a class="reference internal" href="#fig-seadeag"><span class="std std-numref">Fig. 2</span></a>, where <span class="math notranslate nohighlight">\(P\left[M_w=m_i,R=r_j|IM&gt;im\right]\)</span>, often referred
+to as the <em>percent contribution to overall hazard</em>, is plotted for each
+combination of magnitude and distance. Given some additional knowledge about the
+positions of major seismic sources relative to the site of interest, one can infer
+which types of characteristic events are most likely to contribute to the ground
+shaking intensity at this hazard level. The areas of highest percent contribution in
+<a class="reference internal" href="#fig-seadeag"><span class="std std-numref">Fig. 2</span></a> are consistent with the three major sources of seismicity in greater Seattle
+area: (1) Near-fault crustal events, in the magnitude 6.5-7.5 range, attributed primarily to the
+Seattle Fault Zone (accounting for roughly 25% of the overall hazard at this return period); (2)
+Events that originate deep in the boundary between the Juan de Fuca and North American plates, known
+as <em>intraslab</em> events (about 50% contribution); and (3) Large magnitude-9 subduction earthquakes, originating offshore in the Cascadia Subduction Zone (about 25% contribution).</p>
+<figure class="align-center" id="id8">
+<span id="fig-seadeag"></span><a class="reference internal image-reference" href="_images/SeattleDeag.png"><img alt="_images/SeattleDeag.png" src="_images/SeattleDeag.png" style="width: 600px;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 2 </span><span class="caption-text">Deaggregated hazard plot for a site in Seattle with <span class="math notranslate nohighlight">\(V_{s30}=215\)</span> m/s, for the peak acceleration <span class="math notranslate nohighlight">\(a_{max}\)</span> corresponding to a 1 in 2,475-year rate of exceedance.</span><a class="headerlink" href="#id8" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>For a particular <span class="math notranslate nohighlight">\(a_{max}\)</span> value with a given total rate of exceedance, the
+exceedance rates corresponding to specific magnitude bins can be obtained by multiplying
+the overall <span class="math notranslate nohighlight">\(\lambda_{a_{max}}\)</span> by the probability density of each magnitude bin,
+which can be calculated by summing <span class="math notranslate nohighlight">\(P\left[M_w=m_i,R=r_j|IM&gt;im\right]\)</span> over all
+values of <span class="math notranslate nohighlight">\(R\)</span>:</p>
+<div class="math notranslate nohighlight" id="equation-testfileforsphinx-1">
+<span id="eq-deagmw"></span><span class="eqno">(2)<a class="headerlink" href="#equation-testfileforsphinx-1" title="Permalink to this equation"></a></span>\[\mathrm{P}\left[M_w=m_i|IM&gt;im\right] = \sum_{j=1}^{N_R}\mathrm{P}\left[M_w=m_i,R=r_j|IM&gt;im\right]\]</div>
+<p>The resulting marginal magnitude distribution for a particular return period is shown in
+<a class="reference internal" href="#fig-seamwdeag"><span class="std std-numref">Fig. 3</span></a>. It is important to note, however, that the contributions of
+different sources, magnitudes, and distances to ground shaking at a particular site will
+vary with respect to the intensity of shaking. At the lower <span class="math notranslate nohighlight">\(a_{max}\)</span> values
+associated with shorter return periods, the hazard might see higher contributions from
+more frequent events with relatively smaller magnitudes than those at longer return
+periods. As a result, the marginal magnitude distribution given <span class="math notranslate nohighlight">\(a_{max}\)</span> is not
+constant with return period, and therefore requires multiple deaggregation calculations
+to be performed over a broad range of shaking intensities. This is achieved by first
+calling the <code class="docutils literal notranslate"><span class="pre">DeaggCalc</span></code> module multiple times for a predetermined range of return
+periods, ranging from extremely short (roughly 5 years or so) to the maximum return
+period possible in the <code class="docutils literal notranslate"><span class="pre">DeaggCalc</span></code> module, which is currently 20,000 years. The
+resulting magnitude distribution for a given return period is then calculated via
+Equation (<span class="xref std std-ref">eq_DeagMw</span>). An annual rate of exceedance corresponding to a given
+<span class="math notranslate nohighlight">\(a_{max}\)</span>, for a particular magnitude bin, centered at <span class="math notranslate nohighlight">\(M_w=m_i\)</span>, can be determined by multiplying the marginal magnitude probability by the overall rate of exceedance:</p>
+<div class="math notranslate nohighlight" id="equation-testfileforsphinx-2">
+<span id="eq-mwhazcurve"></span><span class="eqno">(3)<a class="headerlink" href="#equation-testfileforsphinx-2" title="Permalink to this equation"></a></span>\[\lambda_{a_i|M_w=m_i} = \lambda_{a_i}\mathrm{P}\left[M_w=m_i|a_{max}&gt;a_i\right]\]</div>
+<p>If this is performed for a series of return periods, a set
+<em>magnitude-specific</em> <span class="math notranslate nohighlight">\(a_{max}\)</span> <em>hazard curves</em> can be constructed. The
+hazard curve values for several magnitudes are shown, along with the overall hazard
+curve, in <a class="reference internal" href="#fig-rawmwhaz"><span class="std std-numref">Fig. 4</span></a>.</p>
+<figure class="align-center" id="id9">
+<span id="fig-seamwdeag"></span><a class="reference internal image-reference" href="_images/SeattleMagDist.png"><img alt="Seattle Mag district" src="_images/SeattleMagDist.png" style="width: 500px;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 3 </span><span class="caption-text">Deaggregated moment magnitude distribution for a site in Seattle, Washington with <span class="math notranslate nohighlight">\(V_{s30}=215\)</span> m/s, for peak acceleration <span class="math notranslate nohighlight">\(a_{max}\)</span> corresponding to a 2,475-year return period.</span><a class="headerlink" href="#id9" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<figure class="align-center" id="id10">
+<span id="fig-rawmwhaz"></span><a class="reference internal image-reference" href="_images/SeattleMwCurves_Raw.png"><img alt="Seattle Hazard curve" src="_images/SeattleMwCurves_Raw.png" style="width: 500px;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 4 </span><span class="caption-text">Overall hazard curve and selected magnitude-specific hazard curves, obtained from deaggregated hazard data at various return periods for a site in Seattle, Washington with with <span class="math notranslate nohighlight">\(V_{s30}=215\)</span> m/s,}</span><a class="headerlink" href="#id10" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<section id="interpolation-of-magnitude-specific-a-max-hazard-curves">
+<h3>Interpolation of Magnitude-Specific <span class="math notranslate nohighlight">\(a_{max}\)</span> Hazard Curves<a class="headerlink" href="#interpolation-of-magnitude-specific-a-max-hazard-curves" title="Permalink to this heading"></a></h3>
+<p>In order to perform the PLHA calculations at regularly-spaced intervals of
+<span class="math notranslate nohighlight">\(a_{max}\)</span>, the marginal magnitude distributions must be interpolated from the raw
+deaggregation data. The most direct and robust way to do this is to interpolate the
+<span class="math notranslate nohighlight">\(M_w\)</span>-hazard curve values (<span class="math notranslate nohighlight">\(\lambda_{a_{max}|M_w}\)</span>) calculated using
+Equation (<span class="xref std std-ref">eq_MwHazCurve</span>). This can be done using a similar cubic spline
+interpolation in <span class="math notranslate nohighlight">\(a_{max}\)</span>-<span class="math notranslate nohighlight">\(\log\lambda\)</span> space as that employed to
+interpolate the overall hazard curve shown in <a class="reference internal" href="#fig-seahazcurve"><span class="std std-numref">Fig. 1</span></a>. However, it
+is important to recognize that the <span class="math notranslate nohighlight">\(M_w\)</span>-specific hazard curves calculated here
+are reconstructed from the product of the overall hazard curve and magnitude
+distribution data as obtained from <code class="docutils literal notranslate"><span class="pre">nshmp-haz</span></code>, rather than via a direct PSHA for
+a given magnitude bin. The deaggregation output from <code class="docutils literal notranslate"><span class="pre">DeaggCalc</span></code> module truncates
+all <span class="math notranslate nohighlight">\(M_w\)</span> bin percentages below 0.01% and presents them as zero-valued (as shown
+for <span class="math notranslate nohighlight">\(8.0&lt;M_w&lt;8.4\)</span> in <a class="reference internal" href="#fig-seamwdeag"><span class="std std-numref">Fig. 3</span></a>). In processing the data for a given deaggregation calculation, a correction scheme was adopted where the difference between the sum of all the magnitude percentages and 100% was re-distributed evenly among all magnitude bins, thereby eliminating zero-valued magnitude probabilities. Because the differences in percent contribution were generally very small (less than about 0.3%), the probabilities assigned to those magnitude intervals were very low, and the changes in marginal probabilities across all bins from the re-distributed difference were practically insignificant.</p>
+<p>As a result, certain <span class="math notranslate nohighlight">\(M_w\)</span> hazard curves do not exhibit the same smooth behavior
+as the overall <span class="math notranslate nohighlight">\(a_{max}\)</span> hazard curves usually do, often displaying sharp
+irregularities that render basic spline fitting inapplicable. Referring back to
+<a class="reference internal" href="#fig-rawmwhaz"><span class="std std-numref">Fig. 4</span></a>, such irregular behavior can be seen in the <span class="math notranslate nohighlight">\(M_w7.9\)</span> and
+<span class="math notranslate nohighlight">\(M_w8.1\)</span> curves, particularly at very low values of <span class="math notranslate nohighlight">\(a_{max}\)</span> where the
+percent contribution for that particular magnitude bin was exceedingly small. Based on a
+review of raw deaggregated <span class="math notranslate nohighlight">\(M_w\)</span> curves from 10 sites representing varying
+seismo-tectonic environments distributed throughout the U.S.
+(Table <a class="footnote-reference brackets" href="#tab-testsites" id="id2">1</a>),
+a slightly modified interpolation scheme was developed to account
+for such irregularities at low hazard levels and low percent-contribution portions of
+the <span class="math notranslate nohighlight">\(M_w\)</span> hazard curves. The scheme is based on identifying a “linear subset”,
+where potentially irregular behavior is accounted for by reverting to a simple linear
+interpolation scheme in <span class="math notranslate nohighlight">\(a_{max}\)</span>-<span class="math notranslate nohighlight">\(\log\lambda\)</span> space, and splicing that
+subset to the “spline subset”, which consists of the smoothly varying datapoints that
+can be interpolated accurately using a cubic spline. The scheme is implemented in the
+following series of steps for given <span class="math notranslate nohighlight">\(M_w\)</span>-specific hazard curve:</p>
+<ol class="arabic">
+<li><p>item Beginning with the lowest <span class="math notranslate nohighlight">\(a_{max}\)</span> value and working upwards, track the number of consecutive <span class="math notranslate nohighlight">\(\lambda_{a_i,M_w}\)</span> values for which the percent contribution of the <span class="math notranslate nohighlight">\(M_w\)</span> bin is less than 2% to the overall hazard. These value comprise the linear subset.</p>
+<blockquote>
+<div><ol class="loweralpha simple">
+<li><p>However, if <em>any</em> value of <span class="math notranslate nohighlight">\(a_{max}&lt;0.02\)</span> g has a percent contribution less than 2%, all data points less than 0.02 g are considered to be in the linear subset.</p></li>
+</ol>
+</div></blockquote>
+</li>
+<li><p>Once a value greater than 2% contribution is reached, this value is also appended to the linear subset, in order to ensure that at least two points are used to linearly interpolate.</p></li>
+<li><p>The remaining data points comprise the spline subset, which shares a common endpoint with the linear subset.</p></li>
+<li><p>If there are no points in the linear subset, the entire hazard curve is interpolated using a cubic spline.</p></li>
+<li><p>If there are fewer than four points in the spline subset, the entire set is interpolated linearly in <span class="math notranslate nohighlight">\(a_{max}\)</span>-<span class="math notranslate nohighlight">\(\log\lambda\)</span> space.</p></li>
+<li><p>Otherwise, the data from the two subsets are interpolated using their respective methods, and combined to form the full <span class="math notranslate nohighlight">\(M_w\)</span>-specific interpolated hazard curve.</p></li>
+</ol>
+<p>Table <a class="footnote-reference brackets" href="#tab-testsites" id="id3">1</a>: Summary of test sites used in development and validation of PLHA code</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 43%" />
+<col style="width: 27%" />
+<col style="width: 30%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Site</p></th>
+<th class="head"><p>Latitude</p></th>
+<th class="head"><p>Longitude</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Charleston, SC</p></td>
+<td><p>32.78</p></td>
+<td><p>-79.93</p></td>
+</tr>
+<tr class="row-odd"><td><p>Eureka, CA</p></td>
+<td><p>40.8</p></td>
+<td><p>-124.16</p></td>
+</tr>
+<tr class="row-even"><td><p>Los Angeles, CA</p></td>
+<td><p>34.05</p></td>
+<td><p>-118.24</p></td>
+</tr>
+<tr class="row-odd"><td><p>Memphis, TN</p></td>
+<td><p>35.15</p></td>
+<td><p>-90.05</p></td>
+</tr>
+<tr class="row-even"><td><p>Minneapolis, MN</p></td>
+<td><p>44.98</p></td>
+<td><p>-93.27</p></td>
+</tr>
+<tr class="row-odd"><td><p>New York, NY</p></td>
+<td><p>40.71</p></td>
+<td><p>-74.01</p></td>
+</tr>
+<tr class="row-even"><td><p>Salt Lake City, UT</p></td>
+<td><p>40.76</p></td>
+<td><p>-111.89</p></td>
+</tr>
+<tr class="row-odd"><td><p>San Francisco, CA</p></td>
+<td><p>37.77</p></td>
+<td><p>-122.42</p></td>
+</tr>
+<tr class="row-even"><td><p>Seattle, WA</p></td>
+<td><p>47.61</p></td>
+<td><p>-122.33</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="extrapolating-magnitude-specific-a-max-hazard-curves-beyond-20-000-year-return-period">
+<h3>Extrapolating Magnitude-Specific <span class="math notranslate nohighlight">\(a_{max}\)</span> Hazard Curves Beyond 20,000-year Return Period<a class="headerlink" href="#extrapolating-magnitude-specific-a-max-hazard-curves-beyond-20-000-year-return-period" title="Permalink to this heading"></a></h3>
+<p>When any sort of analysis involving integration of fragility curves with <em>IM</em>
+hazard data is undertaken, it is important to ensure that a sufficiently broad range of
+intensity measure values is used, so that the resulting fragility curves reach stable
+probabilities of exceedance of a particular <em>EDP</em>. In the case of PLHA, this
+means that the <span class="math notranslate nohighlight">\(M_w\)</span>-specific <span class="math notranslate nohighlight">\(a_{max}\)</span> hazard curves must extend out to
+large enough values of <span class="math notranslate nohighlight">\(a_{max}\)</span> such that the non-exceedance term in Equation
+(<span class="xref std std-ref">eq_PLHA</span>) can reach a value of 1.0. However, as noted previously, the
+<code class="docutils literal notranslate"><span class="pre">DeaggCalc</span></code> module requires a target return period as input, rather than a
+desired <span class="math notranslate nohighlight">\(a_{max}\)</span> value, and is limited to performing deaggregation calculations
+up to a return period of 20,000 years. Depending on the seismic environment and site
+conditions, this return period may coincide with <span class="math notranslate nohighlight">\(a_{max}\)</span> values that are lower
+than those that would produce stable estimates of <span class="math notranslate nohighlight">\(\Lambda_{FS_L}\)</span> from
+fully-developed fragility curves. Thus, it is preferable to develop <span class="math notranslate nohighlight">\(a_{max}\)</span>
+hazard curves to a uniform maximum <span class="math notranslate nohighlight">\(a_{max}\)</span> value, taken here to be 3.0 g. This
+can necessitate extrapolation of some of the <span class="math notranslate nohighlight">\(M_w\)</span> hazard curves, and an
+assumption that the <span class="math notranslate nohighlight">\(M_w\)</span> distribution at 20,000 years is constant for longer
+return periods. Such an assumption is reasonable because at longer return periods
+corresponding to high <span class="math notranslate nohighlight">\(a_{max}\)</span> values, the source contribution is typically at or
+very near the maximum magnitude (<span class="math notranslate nohighlight">\(M_{max}\)</span>) and minimum distance (<span class="math notranslate nohighlight">\(R_{min}\)</span>)
+bins. Beyond that point, any increase hazard is largely controlled by an increase in
+<span class="math notranslate nohighlight">\(\varepsilon\)</span>, which is the number of standard deviations above the mean
+<span class="math notranslate nohighlight">\(a_{max}\)</span> for the <span class="math notranslate nohighlight">\(M_{max}\)</span>-<span class="math notranslate nohighlight">\(R_{min}\)</span> bin. The marginal magnitude
+distributions shown in <a class="reference internal" href="#fig-mwdists"><span class="std std-numref">Fig. 5</span></a> for four of the sites from
+Table <a class="footnote-reference brackets" href="#tab-testsites" id="id4">1</a>
+generally confirm that the magnitude distributions stabilize at long return periods, and the use of the 20,000-year marginal magnitude distribution in extrapolating the magnitude hazard curves is reasonable.</p>
+<figure class="align-center" id="id11">
+<span id="fig-mwdists"></span><a class="reference internal image-reference" href="_images/MultiSiteMwDist.png"><img alt="_images/MultiSiteMwDist.png" src="_images/MultiSiteMwDist.png" style="width: 800px;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 5 </span><span class="caption-text">Marginal magnitude distributions for increasing <span class="math notranslate nohighlight">\(a_{max}\)</span> return periods, for four geographic locations with <span class="math notranslate nohighlight">\(V_{s30}=215\)</span> m/s</span><a class="headerlink" href="#id11" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>For return periods greater than 20,000 years, the cubic spline-interpolated values for
+the overall hazard curve (obtained from the <code class="docutils literal notranslate"><span class="pre">HazCalc</span></code>) are multiplied by the
+percent contribution from the 20,000-year deaggregation (<a class="reference internal" href="#fig-intextmwhaz"><span class="std std-numref">Fig. 6</span></a>).</p>
+<figure class="align-center" id="id12">
+<span id="fig-intextmwhaz"></span><a class="reference internal image-reference" href="_images/SeattleMwCurves_IntExt.png"><img alt="_images/SeattleMwCurves_IntExt.png" src="_images/SeattleMwCurves_IntExt.png" style="width: 500px;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 6 </span><span class="caption-text">Selected interpolated/extrapolated magnitude hazard curves for a site in Seattle, Washington}</span><a class="headerlink" href="#id12" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>To fully characterize the <span class="math notranslate nohighlight">\(\lambda_{a_{max},M_w}\)</span> term in Equation
+(<span class="xref std std-ref">eq_PLHA</span>), the procedure for interpolating and extrapolating the raw deaggregation
+data is repeated for all <span class="math notranslate nohighlight">\(M_w\)</span> bins. The resulting full set of <span class="math notranslate nohighlight">\(M_w\)</span> hazard
+curves is shown for a site in Seattle in <a class="reference internal" href="#fig-seaallcurves"><span class="std std-numref">Fig. 7</span></a>. Note that the
+specific <span class="math notranslate nohighlight">\(M_w\)</span> values denote the <em>midpoints</em> of the magnitude bins, and are therefore influenced by the parameters of the deaggregation calculations, namely the minimum and maximum magnitudes, as well as the magnitude bin size.</p>
+<figure class="align-center" id="id13">
+<span id="fig-seaallcurves"></span><a class="reference internal image-reference" href="_images/SeattleMwCurves_ALL.png"><img alt="_images/SeattleMwCurves_ALL.png" src="_images/SeattleMwCurves_ALL.png" style="width: 800px;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 7 </span><span class="caption-text">Full set of interpolated/extrapolated magnitude hazard curves for a site with <span class="math notranslate nohighlight">\(V_{s30}=215\)</span> m/s in Seattle, Washington. Curves have been divided into four magnitude ranges for visual clarity.</span><a class="headerlink" href="#id13" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+<section id="maximum-acceleration-for-use-in-plha-calculations">
+<h3><em>Maximum Acceleration for use in PLHA Calculations</em><a class="headerlink" href="#maximum-acceleration-for-use-in-plha-calculations" title="Permalink to this heading"></a></h3>
+<p>As stated previously, the <span class="math notranslate nohighlight">\(M_w\)</span>-specific hazard curves are extrapolated in a
+consistent manner out to <span class="math notranslate nohighlight">\(a_{max}=3.0\)</span> g for all sites, in all seismo-tectonic
+regions. The selection of 3.0 g is based on the maximum PGA used by USGS in their PSHA
+framework to develop the national seismic hazard maps. Due to the fact that the USGS
+hazard maps are developed for soft rock sites, an argument could be made that the
+maximum <span class="math notranslate nohighlight">\(a_{max}\)</span> considered in probabilistic liquefaction calculations, which
+naturally occur at softer soil sites, should be lower due to non-linear considerations.
+However, the general consensus in engineering seismology appears to be that there is
+little justification in truncating ground motion distributions, either at a maximum
+“physically possible” PGA or at some number of standard deviations above the median
+predicted PGA (<a class="reference internal" href="#hanks2005" id="id5"><span>[Hanks2005]</span></a>, <a class="reference internal" href="#strasser2008" id="id6"><span>[Strasser2008]</span></a>). Furthermore, in terms of
+calculating <span class="math notranslate nohighlight">\(\Lambda_{FS_L}\)</span>, a scenario where the fragility curves are truncated
+at an unreasonably low <span class="math notranslate nohighlight">\(a_{max}\)</span> has the potential to result in lower exceedance
+rates than what would be calculated from the full distribution, thus producing a
+slightly unconservative estimate of the liquefaction hazard. The inclusion of the full
+range of <span class="math notranslate nohighlight">\(a_{max}\)</span> thus might produce, at worst, a slightly conservative representation of the liquefaction hazard, but currently there is no strong justification to do otherwise.</p>
+<p class="rubric">List of Tables</p>
+<dl class="footnote brackets">
+<dt class="label" id="tab-testsites"><span class="brackets">1</span><span class="fn-backref">(<a href="#id2">1</a>,<a href="#id3">2</a>,<a href="#id4">3</a>)</span></dt>
+<dd><p>Summary of test sites used in development and validation of PLHA code</p>
+</dd>
+</dl>
+<p class="rubric">References</p>
+<dl class="citation">
+<dt class="label" id="baker2015"><span class="brackets"><a class="fn-backref" href="#id1">Baker2015</a></span></dt>
+<dd><p>Baker.
+Full reference to Baker,  (2015) …</p>
+</dd>
+<dt class="label" id="hanks2005"><span class="brackets"><a class="fn-backref" href="#id5">Hanks2005</a></span></dt>
+<dd><p>Hanks et al.,</p>
+</dd>
+<dt class="label" id="strasser2008"><span class="brackets"><a class="fn-backref" href="#id6">Strasser2008</a></span></dt>
+<dd><p>Strasser et al.</p>
+</dd>
+</dl>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="technical_manual.html" class="btn btn-neutral float-left" title="Theory" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="source_main_app.html" class="btn btn-neutral float-right" title="Main application" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, Andrew, Steve, Peter.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
